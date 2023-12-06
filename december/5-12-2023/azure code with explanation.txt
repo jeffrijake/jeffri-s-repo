@@ -1,0 +1,58 @@
+Install and import the Azure PowerShell module:
+-->Install-Module -Name Az -Force -AllowClobber -Scope CurrentUser
+--> Import-Module Az -Force
+	These lines install and import the Azure PowerShell module named "Az." This module provides cmdlets for managing Azure resources.
+
+Sign in to your Azure account:
+--> Connect-AzAccount -tenantid "e6ab23cc-256c-4a8f-b1b9-ccaebe0ee93e"
+	This line connects to the Azure account using the specified tenant ID.
+
+Set Subscription context:
+--> Set-AzContext -subscriptionId "f032a5a1-859b-458d-b9a8-9b6b70f9613e"
+	Sets the subscription context to the one specified by the subscription ID.
+
+Specify your Azure Storage Account details:
+--> $storageAccountName = "jeffristorage"
+--> $resourceGroupName = "jeffri_new_resourcegroup"
+	These lines define variables for the Azure Storage Account name and the resource group name.
+
+Get the storage account context:
+-->$storageAccount = Get-AzStorageAccount -ResourceGroupName $resourceGroupName -AccountName $storageAccountName
+-->$ctx = $storageAccount.Context
+Retrieves the Azure Storage Account information and stores the storage account context in the variable $ctx.
+
+List and delete blobs in all containers:
+-->$containers = Get-AzStorageContainer -Context $ctx
+-->foreach ($container in $containers) {
+    $blobs = Get-AzStorageBlob -Context $ctx -Container $container.Name
+    foreach ($blob in $blobs) {
+        Remove-AzStorageBlob -Context $ctx -Container $container.Name -Blob $blob.Name -Force
+        Write-Output "Deleted blob: $($blob.Name)"
+    }
+}
+
+	Lists all containers in the storage account, then iterates through each container and lists/deletes all blobs (files) within each container.
+
+List and delete tables:
+-->$tables = Get-AzStorageTable -Context $ctx
+foreach ($table in $tables) {
+    Remove-AzStorageTable -Context $ctx -Name $table.Name 
+    Write-Output "Deleted table: $($table.Name)"
+}
+
+	Lists all tables in the storage account and deletes each table.
+
+List and delete files in all file shares:
+-->$fileShares = Get-AzStorageShare -Context $ctx
+foreach ($fileShare in $fileShares) {
+    $files = Get-AzStorageFile -Context $ctx -ShareName $fileShare.Name
+    foreach ($file in $files) {
+        Remove-AzStorageFile -Context $ctx -ShareName $fileShare.Name -Path $file.Name 
+        Write-Output "Deleted file: $($file.Name)"
+    }
+}
+Lists all file shares in the storage account, then iterates through each file share and lists/deletes all files within each file share.
+
+Uncommented line for output (optional):
+#Write-Output "All blobs, tables, and files in the storage account have been deleted."
+If you uncomment this line, it will output a message indicating that all blobs, tables, and files in the storage account have been deleted. This line is currently commented out with a '#'.
