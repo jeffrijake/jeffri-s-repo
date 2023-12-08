@@ -1,7 +1,4 @@
-#AWS Fargate#
-
-AWS Fargate can load so many number of containers. all the containers are serverless.
-Fargate can quickly launch n number of containers and seamlessly scale based on requirements
+#AWS ECS,ECR&#
 
 **AWS ECS**
 
@@ -117,5 +114,40 @@ o	Add ec2 instances when you're missing capacity (CPU, RAM...)
 
 •	We will assign an IAM role to full the images to the instances
 
-•	It supports image vulnerability scanning, versioning, image tags, image lifecycle
+- ECR can scale to meet the demands of storing and retrieving container images. It automatically scales based on usage, ensuring high availability and performance.
+
+
+
+- ECR provides image scanning capabilities to help identify vulnerabilities in your container images. This can be integrated into your CI/CD pipeline to ensure that only secure images are deployed.
+
+
+
+- ECR supports cross-region replication, allowing you to replicate your container images to different regions for redundancy and faster access.
+
+
+**Using ECR typically involves the following steps:**
+
+**Create a Repository:** You create a repository in ECR to store your Docker images.
+
+**Push Images:** Use Docker commands or other tools to push your container images to the ECR repository.
+
+**Integrate with AWS Services:** Integrate ECR with other AWS services like ECS, EKS, or CodeBuild to build, deploy, and manage containerized applications.
+
+
+**Amazon EKS**
+
+- Amazon EKS, or Amazon Elastic Kubernetes Service, is a fully managed Kubernetes service provided by Amazon Web Services (AWS). It simplifies the process of deploying, managing, and scaling containerized applications using Kubernetes on AWS infrastructure.
+
+- With EKS, you can focus on building and running your applications while AWS takes care of the underlying Kubernetes control plane and infrastructure.
+
+- EKS handles the deployment and management of the Kubernetes control plane, which includes the API server, etcd, and other components necessary for the operation of a Kubernetes cluster.
+
+
+
+- EKS allows you to easily scale your Kubernetes clusters to meet the demands of your applications. You can add or remove worker nodes based on your application's resource requirements.
+
+- EKS provides a built-in Cluster AutoScaler that automatically adjusts the number of worker nodes in your cluster based on resource demands and constraints.
+
+- EKS allows you to create and manage worker nodes using Managed Node Groups, simplifying the provisioning and scaling of worker nodes.
+
 
