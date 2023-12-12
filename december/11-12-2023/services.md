@@ -33,6 +33,7 @@ Here
 
 2) **ports** define how the Service should expose the application.
 
+
 Use **kubectl apply** to create a Service based on the YAML file
 
 	kubectl apply -f your-service-definition.yaml
