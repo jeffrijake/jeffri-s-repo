@@ -1,0 +1,16 @@
+provider "aws" {
+
+    region = "us-east-1"
+  
+	}
+
+
+module "my_ec2_instance" {
+
+  	source              = "./modules/ec2"
+  	instance_type       = "t2.micro"
+  	ami                 = "ami-0440d3b780d96b29d"
+  	subnet_id           = "subnet-0ea0fff69d6c4d13d"
+  	security_group_ids  = ["sg-02b69dffa9863de61"]
+  	key_name            = "jankith"
+	}

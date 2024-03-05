@@ -1,0 +1,56 @@
+#main.tf#
+
+resource "aws_s3_bucket" "main" {
+
+	  bucket = var.bucket_name 
+	}
+
+resource "aws_s3_bucket_acl" "main" {
+	
+    bucket = aws_s3_bucket.main.id
+    acl = "public-read"
+	}
+
+
+# outputs.tf #
+
+output "bucket_id" {
+
+	  value = aws_s3_bucket.main.id
+	}
+
+output "bucket_arn" {
+
+	  value = aws_s3_bucket.main.arn
+	}
+
+
+# variable.tf #
+
+variable "bucket_name" {
+
+	  description = "S3-bucket-name"
+	}
+
+variable "region" {
+
+	  description = "The AWS region where the S3 bucket will be created in this region"
+	}
+
+
+
+## Main.tf ##
+
+provider "aws" {
+
+    region = "us-east-1"
+  
+	}
+
+module "s3" {
+
+	  source      = "./modules/S3"
+	  bucket_name = "jeffripracticebucket"
+	  region      = "us-east-1"
+	}
+
