@@ -1,0 +1,61 @@
+# main.tf #
+
+resource "aws_alb" "main" {
+
+	  name               = var.alb_name
+	  subnets            = var.alb_subnet_ids
+	  security_groups    = var.alb_security_group_ids
+	  internal           = false # Set to true if you want an internal ALB
+	  load_balancer_type = "application"
+
+	  enable_deletion_protection = true # Set to true if you want to protect the ALB from deletion
+	}
+
+# outputs.tf #
+
+output "alb_dns_name" {
+
+	  description = "DNS name of the Application Load Balancer"
+	  value       = aws_alb.main.dns_name
+	}
+
+output "alb_zone_id" {
+
+	  description = "Zone ID of the Application Load Balancer"
+	  value       = aws_alb.main.zone_id
+	}
+
+
+# variables.tf #
+
+variable "alb_name" {
+
+	  description = "Name of the Application Load Balancer"
+	  type        = string
+	}
+
+variable "alb_subnet_ids" {
+
+	  description = "List of subnet IDs to attach the ALB to"
+	  type        = list(string)
+	}
+
+variable "alb_security_group_ids" {
+
+	  description = "List of security group IDs for the ALB"
+	  type        = list(string)
+	}
+
+
+------------------------------------------------------------------
+
+
+# main.tf #
+
+module "alb" {
+
+	  source = "./modules/alb" 
+	  alb_name               = "jeffripractice-alb"
+	  alb_subnet_ids         = ["subnet-05469fc6cee8a44b1","subnet-0d32b0f9503f02f9b"] # mana subnet IDs ikkada ivvali
+	  alb_security_group_ids = ["sg-02b69dffa9863de61"] # security group ID ikkada ivvali
+	}
