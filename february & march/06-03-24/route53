@@ -1,0 +1,78 @@
+# main.tf #
+
+resource "aws_route53_zone" "main" {
+
+	  name = var.zone_name
+	}
+
+resource "aws_route53_record" "main" {
+
+	  zone_id = aws_route53_zone.main.zone_id
+	  name    = var.record_name
+	  type    = var.record_type
+	  ttl     = var.record_ttl
+	  records = [var.record_value]
+	}
+
+
+
+# outputs.tf #
+
+output "zone_id" {
+
+	  description = "The ID of the created Route 53 hosted zone"
+	  value       = aws_route53_zone.main.zone_id
+	}
+
+output "record_fqdn" {
+	  description = "The fully qualified domain name (FQDN) of the created DNS record"
+  	value       = aws_route53_record.main.fqdn
+	}
+
+
+# variables.tf #
+
+variable "zone_name" {
+
+  	description = "The name of the hosted zone"
+  	type        = string
+	}
+
+variable "record_name" {
+
+  	description = "The name of the DNS record"
+	  type        = string
+	}
+
+variable "record_type" {
+
+	  description = "The type of DNS record (e.g., A, CNAME, MX, etc.)"
+	  type        = string
+	}
+
+variable "record_ttl" {
+
+	  description = "The TTL (time to live) for the DNS record"
+	  type        = number
+	}
+
+variable "record_value" {
+
+	  description = "The value of the DNS record"
+	  type        = string
+	}
+
+
+
+
+# main.tf #
+
+module "route53" {
+
+	  source        = "./modules/route53"
+	  zone_name     = "example.org"
+	  record_name   = "www"
+	  record_type   = "A"
+	  record_ttl    = 300
+	  record_value  = "1.2.3.4"
+	}
