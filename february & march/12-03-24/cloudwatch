@@ -1,0 +1,110 @@
+cloudwatch
+
+
+
+variables.tf
+
+variable "alarm_name" {
+
+	  description = "The name for the alarm"
+	  type        = string
+	}
+
+variable "metric_name" {
+
+	  description = "The name of the metric associated with the alarm"
+	  type        = string
+	}
+
+variable "namespace" {
+
+	  description = "The namespace of the metric associated with the alarm"
+	  type        = string
+	}
+
+variable "comparison_operator" {
+
+	  description = "The comparison operator for evaluating the alarm"
+	  type        = string
+	  default     = "GreaterThanOrEqualToThreshold" # Other possible values: GreaterThanThreshold, LessThanThreshold, LessThanOrEqualToThreshold
+	}
+
+variable "evaluation_periods" {
+
+	  description = "The number of periods over which data is compared to 	the specified threshold"
+  	type        = number
+  	default     = 1
+	}
+
+variable "threshold" {
+
+	  description = "The value against which the specified statistic is 	compared"
+	  type        = number
+	}
+
+variable "actions_enabled" {
+
+	  description = "Indicates whether or not actions should be executed during any changes to the alarm's state"
+	  type        = bool
+	  default     = true
+	}
+
+variable "alarm_actions" {
+
+	  description = "The list of actions to execute when this alarm transitions into an ALARM state from any other state"
+	  type        = list(string)
+	  default     = []
+	}
+
+variable "ok_actions" {
+
+	  description = "The list of actions to execute when this alarm transitions into an OK state from any other state"
+	  type        = list(string)
+	  default     = []
+	}
+
+variable "insufficient_data_actions" {
+
+	  description = "The list of actions to execute when this alarm transitions into an INSUFFICIENT_DATA state from any other state"
+	  type        = list(string)
+	  default     = []
+	}
+
+
+main.tf
+
+resource "aws_cloudwatch_metric_alarm" "cw" {
+
+	  alarm_name          = var.alarm_name
+	  comparison_operator = var.comparison_operator
+	  evaluation_periods  = var.evaluation_periods
+	  metric_name         = var.metric_name
+	  namespace           = var.namespace
+	  threshold           = var.threshold
+	  actions_enabled     = var.actions_enabled
+
+	  alarm_actions              = var.alarm_actions
+	  ok_actions                 = var.ok_actions
+	  insufficient_data_actions  = var.insufficient_data_actions
+	}
+
+
+
+module - main.tf
+
+module "cloudwatch_alarm" {
+
+	  source = "./modules/cloudwatch"
+	 alarm_name          = "ExampleAlarm"
+  	comparison_operator = "GreaterThanThreshold"
+  	evaluation_periods  = 2
+  	metric_name         = "CPUUtilization"
+  	namespace           = "AWS/EC2"
+  	threshold           = 70.0
+  	actions_enabled     = true
+  	alarm_actions              = ["arn:aws:sns:us-east-1:123456789012:MyTopic"]
+  	ok_actions                 = []
+  	insufficient_data_actions  = []
+	}
+
+

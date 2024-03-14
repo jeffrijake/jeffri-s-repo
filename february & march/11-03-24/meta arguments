@@ -1,0 +1,191 @@
+# Meta arguments #
+
+meta arguments are the special arguments that can be used with resource blocks and modules to control the behavior or influence the provisioning process of infrastructure.
+
+They offer additional configurations options beyond the regular resource-specific arguments.
+
+Using meta arguments we can control and customize our modules or resources.
+
+there are 5 meta arguments in terraform
+
+1) depends_on
+
+2) count
+
+3)for_each
+
+4)provider
+
+5)lifecycle
+
+
+-----------------------------------------------------------------------
+depends_on:
+
+it ia a meta arguments used in terraform to specify the dependencies between resources. it forces one resource to be created before another or to wait for some external action outside of terraform before proceeding.
+
+resource "aws_instance" "ec2_server" {
+
+	  ami           = "ami-0c55b159cbfafe1f0"
+	  instance_type = "t2.micro"
+	  tags = {
+	    Name = "ec2-server"
+	  }
+	}
+
+resource "aws_eip" "eip" {
+
+	  instance = aws_instance.ec2_server.id
+	}
+
+resource "aws_security_group" "sg" {
+
+	  name        = "example-sg"
+	  description = "Example security group"
+	}
+
+# Ensure that the EIP resource is only created after the instance is created
+resource "aws_eip_association" "eip_assoc" {
+
+	  depends_on = [aws_instance.example_server]
+	  instance_id = aws_instance.example_server.id
+	  allocation_id = aws_eip.example_eip.id
+	}
+
+# Ensure that the security group is only created after the instance is created
+resource "aws_instance" "server2" {
+
+	  depends_on = [aws_instance.example_server]
+	  vpc_security_group_ids = [aws_security_group.example_sg.id]
+	}
+----------------------------------------------------------------------
+
+count
+
+This parameter is used to create multiple instances of a resource based on a single block of configuration. This is useful when you need to create multiple similar resources with slightly different configurations.
+
+
+resource "aws_instance" "server" {
+
+
+	  # create four similar EC2 instances
+	  	count = 4
+
+	  ami           = "ami-a1b2c3d4"
+	  instance_type = "t2.micro"
+
+	  tags = {
+	    # Usage of count.index in providing a distinct name for every Instance
+	    Name = "Server ${count.index}"
+	  }
+	}
+
+
+
+
+----------------------------------------------------------
+
+for_each
+
+it is also another iteration construct similar to 'count', but it operated on a map or set of strings instead of simple numeric value. this allows for more flexibility in defining multipe instances of a resource with different configurations.
+
+## Example for map
+resource "azurerm_resource_group" "rg" {
+
+	  for_each = {
+	    group_A = "eastus"
+	    group_B = "westus2"
+	  }
+	  name     = each.key
+	  location = each.value
+	}
+
+## Example for set
+resource "aws_iam_user" "accounts" {
+
+	  for_each = toset( ["Developer", "Tester", "Administrator", "Cloud-Architect"] )
+  	name     = each.key
+	}
+--------------------------------------------------------
+
+Provider
+
+it is a special arguments that you can use with a provider block to configure its behaviour or specify additional settings. these provide control over on how terraform interacts with the provider and its resources.
+some common provider meta-arguments are:
+
+1)alias: it is useful when multiple configurations for the same provider within the same configuration
+
+provider "aws" {
+
+	  region = "us-west-2"
+	}
+
+provider "aws" {
+
+	  alias  = "east"
+	  region = "us-east-1"
+	}
+
+
+
+2)version: we can use this as a specific provider version or specify a version range
+
+provider "aws" {
+
+	  version = "~> 3.0"
+	}
+
+3)credentials: it specifies the AWS access credentials to use when authenticating with the AWS provider
+
+provider "aws" {
+
+	  region     = "us-west-2"
+	  access_key = "your_access_key"
+	  secret_key = "your_secret_key"
+	}
+
+4)assume_role: it allows the aws provider to assume a specific IAM role when making API requests. this is useful for cross-account access
+
+provider "aws" {
+
+	  region      = "us-west-2"
+	  assume_role {
+	    role_arn     = "arn:aws:iam::123456789012:role/role-name"
+	  }
+	}
+
+
+
+---------------------------------------------------
+
+lifecycle:
+
+this allows you to control certain aspects of how terraform manages the lifecycle of the resource. it provides options to configure behaviour related to create, update, and delete actions for the resource.
+
+1.create_before_destory: this boolean option determines whether terraofrm should create the replacement resource before destorying the existing one during updates.
+
+By setting "create_before_destroy" to true forces terraform to create a new resource before destroying the old one.
+
+resource "aws_instance" "example" {
+
+	  lifecycle {
+	    create_before_destroy = true
+	  }
+	}
+
+
+2. prevent_destory: when it is set to true, this prevents terraform from destroying the resource. this can be useful for preventing accidental deletion of critical resources.
+
+resource "aws_instance" "example" {
+
+  	lifecycle {
+    	prevent_destroy = true
+	  }
+	}
+
+
+
+
+
+
+
