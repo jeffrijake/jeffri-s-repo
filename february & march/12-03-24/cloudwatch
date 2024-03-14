@@ -103,6 +103,7 @@ module "cloudwatch_alarm" {
   	threshold           = 70.0
   	actions_enabled     = true
   	alarm_actions              = ["arn:aws:sns:us-east-1:123456789012:MyTopic"]
+
   	ok_actions                 = []
   	insufficient_data_actions  = []
 	}
