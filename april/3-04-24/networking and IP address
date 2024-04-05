@@ -1,0 +1,92 @@
+Types of Networks:
+
+LAN (Local Area Network): 
+
+	A LAN connects computers over a relatively short distance, allowing them to share data, files, and resources. For example, a LAN may connect all the computers in an office building, school, or hospital. Typically, LANs are privately owned and managed.
+
+WAN (Wide Area Network): 
+
+	A Wide Area Network (WAN) is a network that covers a large geographic area, such as a city, country, or even the entire world. WANs are used to connect LANs together and are typically used for long-distance communication.
+
+MAN (metropolitan area network):
+
+	 MANs are typically larger than LANs but smaller than WANs. Cities and government entities typically own and manage MANs.
+
+VPN (virtual private network): 
+
+	A VPN is a secure, point-to-point connection between two network end points (see ‘nodes’ below). A VPN establishes an encrypted channel that keeps a user’s identity and access credentials, as well as any data transferred, inaccessible to hackers.
+
+
+Client/Server Networks:
+
+	A client-server network is a form of internet network that consists of a single central computer functioning as a server and directing several other computers, referred to as clients. Clients can access shared files and information kept on the serving machine by connecting to the server.
+
+Peer-to-peer Networks:
+
+	computing or networking is a distributed application architecture that partitions tasks or workloads between peers. Peers are equally privileged, equipotent participants in the network, forming a peer-to-peer network of nodes.
+
+	Peers make a portion of their resources, such as processing power, disk storage, or network bandwidth, directly available to other network participants, without the need for central coordination by servers or stable hostsPeers are both suppliers and consumers of resources, in contrast to the traditional client–server model in which the consumption and supply of resources are divided.
+
+
+components of a network:
+
+1) Message
+
+2) Sender
+
+3) Receiver
+
+4) Medium
+
+5) Protocol
+
+
+IP Address:
+
+	An IP address is a unique address that identifies a device on the internet or a local network. IP stands for "Internet Protocol," which is the set of rules governing the format of data sent via the internet or local network.
+
+
+	IP addresses are expressed as a set of four numbers — an example address might be 192.158.1.38. Each number in the set can range from 0 to 255. So, the full IP addressing range goes from 0.0.0.0 to 255.255.255.255.
+
+
+Types of IP addresses:
+
+	There are different categories of IP addresses, and within each category, different types.etc.,
+
+Consumer IP addresses:
+
+	Every individual or business with an internet service plan will have two types of IP addresses: their private IP addresses and their public IP address. The terms public and private relate to the network location — that is, a private IP address is used inside a network, while a public one is used outside a network.
+
+Private IP addresses:
+	
+	Every device that connects to your internet network has a private IP address. This includes computers, smartphones, and tablets but also any Bluetooth-enabled devices like speakers, printers, or smart TVs. With the growing internet of things, the number of private IP addresses you have at home is probably growing. Your router needs a way to identify these items separately, and many items need a way to recognize each other. Therefore, your router generates private IP addresses that are unique identifiers for each device that differentiate them on the network.
+
+Public IP addresses:
+
+	A public IP address is the primary address associated with your whole network. While each connected device has its own IP address, they are also included within the main IP address for your network. As described above, your public IP address is provided to your router by your ISP. Typically, ISPs have a large pool of IP addresses that they distribute to their customers. Your public IP address is the address that all the devices outside your internet network will use to recognize your network.
+
+
+
+Public IP addresses come in two forms – dynamic and static
+
+Dynamic IP addresses:
+
+	Dynamic IP addresses change automatically and regularly. ISPs buy a large pool of IP addresses and assign them automatically to their customers. Periodically, they re-assign them and put the older IP addresses back into the pool to be used for other customers. The rationale for this approach is to generate cost savings for the ISP. Automating the regular movement of IP addresses means they don’t have to carry out specific actions to re-establish a customer's IP address if they move home, for example. There are security benefits, too, because a changing IP address makes it harder for criminals to hack into your network interface.
+
+
+Static IP addresses:
+
+	In contrast to dynamic IP addresses, static addresses remain consistent. Once the network assigns an IP address, it remains the same. Most individuals and businesses do not need a static IP address, but for businesses that plan to host their own server, it is crucial to have one. This is because a static IP address ensures that websites and email addresses tied to it will have a consistent IP address — vital if you want other devices to be able to find them consistently on the web.
+
+
+
+
+
+
+
+
+
+
+
+
+
