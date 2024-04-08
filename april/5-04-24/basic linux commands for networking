@@ -1,0 +1,117 @@
+1)ifconfig: 
+	
+	ifconfig is short for interface configurator. This command is utilized in network inspection, initializing the interface, enabling or disabling an IP address, and configuring an interface with an IP address. Also, it is used to show the network and route interface.
+
+Syntax: Ifconfig  
+
+
+2)ip: 
+
+	It is the updated and latest edition of ifconfig command. The command provides the information of every network, such as ifconfig. Also, it can be used to get information about a particular interface.
+
+Syntax:  ip a, ip addr  
+
+
+3) traceroute: 
+
+	The traceroute command is one of the most helpful commands in the networking field.It identifies the delay and decides the pathway to our target. Basically, it aids in the below ways:
+			 1)It determines the location of the network latency and informs it.
+			2) It follows the path to the destination.
+			3)It gives the names and recognizes all devices on the path.
+
+
+Syntax: traceroute (destination)
+
+
+4)tracepath: 
+
+	The tracepath command is the same as the traceroute command, and it is used to find network delays. It traces the path to the destination and recognizes all hops in it. It identifies the point at which the network is weak if our network is not strong enough.
+
+Syntax: tracepath (destination)
+
+ 
+ping: 
+
+	It is short for Packet Internet Groper. The ping command is one of the widely used commands for network troubleshooting. Basically, it inspects the network connectivity between two different nodes.
+
+Syntax: ping (destination) 
+ 
+netstat: 
+	
+	It is short form of network statistics. It gives statistical figures of many interfaces, which contain open sockets, connection information, and routing tables.
+
+Syntax: Netstat  
+
+
+ss: 
+
+	This command is the substitution for the netstat command. The ss command is more informative and much faster than netstat.
+
+Syntax: Ss
+
+  
+nsloopup: 
+
+	The nslookup command is an older edition of the dig command. Also, it is utilized for DNS related problems.
+
+
+Syntax: nslookup (domainname)
+
+  
+dig: 
+
+	dig is shortform of Domain Information Groper. The dig command is an improvised edition of the nslookup command. Mainly, it is used to authorize DNS mappings, host addresses, MX records, and every other DNS record for the best DNS topography understanding.
+
+
+Syntax: dig (domainname)  
+
+
+route: 
+	
+	The route command shows and employs the routing table available for our system. Basically, a router is used to detect a better way to transfer the packets around a destination.
+
+Syntax: Route
+
+  
+host: 
+	
+	The host command shows the IP address for a hostname and the domain name for an IP address. Also, it is used to get DNS lookup for DNS related issues.
+
+Syntax: host -t <resourceName> 
+
+ 
+arp: 
+
+	The arp command is short for Address Resolution Protocol. This command is used to see and include content in the ARP table of the kernel.
+
+Syntax: Arp  
+
+
+iwconfig: 
+
+	It is a simple command which is used to see and set the system's hostname.
+
+  
+curl and wget: 
+	
+	These commands are used to download files from CLI from the internet. curl must be specified with the "O" option to get the file, while wget is directly used.
+
+curl Syntax: curl -O (fileLink) 
+
+wget Syntax: wget (fileLink)
+
+
+mtr: 
+	
+	The mtr command is a mix of the traceroute and ping commands. It regularly shows information related to the packets transferred using the ping time of all hops. Also, it is used to see network problems.
+
+Syntax: mtr <path>
+
+  
+whois: 
+
+	The whois command fetches every website related information. We can get every information of a website, such as an owner and the registration information.
+
+Syntax: whois (websiteName)  
+
+  
