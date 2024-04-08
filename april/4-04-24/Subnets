@@ -1,0 +1,90 @@
+In subnetting , a network is divided into several 
+smaller groups with each subnetwork (or subnet) 
+having its own subnetwork address.
+
+
+Netid + Subnetid + Hstid
+
+
+	141 . 14 . 192 . 2 
+
+	Netid + Subnetid + Hostid
+
+*USES OF SUBNETS*:
+
+Segmentation: 
+	
+	Subnets allow you to segment your network into smaller, more manageable parts. This segmentation can be based on departments, applications, security requirements, or other criteria. It helps in organizing and isolating different parts of your network for better control and security.
+
+
+IP Address Management: 
+
+	Subnets help in managing IP addresses efficiently. By dividing your network into subnets.
+
+Security: 
+
+	Subnets play a crucial role in network security. You can apply security policies, access control rules, and firewall configurations at the subnet level to control traffic flow and enforce security measures.
+
+Routing: 
+
+	Subnets are used in routing to determine how network traffic is directed between different subnets, both within the same network and across networks. Routing tables are configured to route traffic between subnets based on routing policies.
+
+High Availability and Fault Tolerance: 
+
+	Subnets are often used in conjunction with availability zones (AZs) to create highly available and fault-tolerant architectures. 
+
+	By deploying resources across multiple subnets in different AZs, you can ensure that your applications remain available even if one AZ or subnet experiences an outage.
+
+Resource Isolation: 
+
+	Subnets allow you to isolate resources based on their functionality or security requirements. For example, you can place backend databases in private subnets inaccessible from the internet for enhanced security.
+
+VPN and Direct Connect: 
+
+	Subnets are used in setting up Virtual Private Networks (VPNs) and Direct Connect connections to establish secure and private communication between on-premises networks and AWS resources.
+
+
+
+Characteristics of Subnetting
+
+To design a subnet, some features are required to be understand, which are:
+
+
+1) Network ID: 
+	
+	It is the first IP address in each Sub-Network in the main network ID.
+ 
+2) Broadcast ID: 
+
+	This feature represents the last IP address in each Sub-Network in the network ID. 
+	
+3)First Host ID: 
+
+	The next IP address after the Network ID is represented by the First Host ID.
+4) Last Host ID: 
+
+	The IP address right before the Broadcast ID is represented as Last Host ID.
+
+5) Next Network: 
+	
+	This feature assigns the Network ID for the next sub-network.
+ 
+6)IP Addresses: 
+
+	This feature represents the total number of IP addresses in the sub-network.
+
+
+Drawbacks of Subnetting:
+
+1) Complex Connections: 
+
+	With the increase in the no. of sub-nets, the complexity of the network also increases several-fold. This makes maintaining and troubleshooting the errors in the network.
+
+2)Unused IP address: 
+	
+	This problem arises as the sub-network is needed with sufficient IP addresses, but due to class addressing, many addresses remain unused.
+
+3)Hardware Requirement:
+
+	The communication between sub-network is efficient only with the involvement of proper hardware devices (router, switch, etc.), which are needed to share continuous data exchange.
+
