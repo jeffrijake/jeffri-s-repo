@@ -1,0 +1,92 @@
+Git is a version control system which tracks the history of changes as people and teams collaborate on projects together. if make changes to the project, any earlier version of the project can be recovered at any time.
+
+
+we can review project history to find out:
+
+1) Which changes were made
+
+2) Who made the changes
+
+3) When were the changes made
+
+4) Why were changes needed
+
+
+GitHub hosts Git repositories and provides developers with tools to ship better code through command line features, issues (threaded discussions), pull requests, code review, or the use of a collection of free and for-purchase apps in the GitHub Marketplace
+
+
+
+Basic Git commands:
+
+To use Git, we need to use commands to copy, create, change, and combine code. These commands can be executed directly from the command line or by using an application like GitHub Desktop
+
+
+git init: 
+
+	initializes a brand new Git repository and begins tracking an existing directory. 
+
+
+git clone:
+
+	creates a local copy of a project that already exists remotely. The clone includes all the project's files, history, and branches.
+
+git add 
+
+	stages a change.This command performs staging, the first part of that two-step process. Any changes that are staged will become a part of the next snapshot and a part of a project history.
+
+git commit 
+
+	saves the snapshot to the project history and completes the change-tracking process. In short, a commit functions like taking a photo. Anything that's been staged with git add will become a part of the snapshot with git commit.
+
+git status:
+
+	shows the status of changes as untracked, modified, or staged.
+
+git branch:
+
+	shows the branches being worked on locally.
+
+git merge:
+
+	merges lines of development together. This command is typically used to combine changes made on two distinct branches. For example, a developer would merge when they want to combine changes from a feature branch into the main branch for deployment.
+
+git pull:
+
+	updates the local line of development with updates from its remote counterpart. Developers use this command if a teammate has made commits to a branch on a remote, and they would like to reflect those changes in their local environment.
+
+git push:
+
+	updates the remote repository with any commits made locally to a branch.
+
+What does Git do:
+
+1) Manage projects with Repositories
+
+2) Clone a project to work on a local copy
+
+3) Control and track changes with Staging and Committing
+
+4) Branch and Merge to allow for work on different parts and versions of a project
+
+5)Pull the latest version of the project to a local copy
+
+6)Push local updates to the main project
+
+
+Working with Git:
+
+1) Initialize Git on a folder, making it a Repository
+
+2) Git now creates a hidden folder to keep track of changes in that folder
+
+3) When a file is changed, added or deleted, it is considered modified
+
+4) You select the modified files you want to Stage
+
+5) The Staged files are Committed, which prompts Git to store a permanent snapshot of the files
+
+6) Git allows you to see the full history of every commit.
+
+7) You can revert back to any previous commit.
+
+8) Git does not store a separate copy of every file in every commit, but keeps track of changes made in each commit!
