@@ -1,0 +1,106 @@
+Git is a "version control system"
+
+Github is used to store the source code.
+
+
+Fork:
+
+To get own copy of our repository
+
+Difference between branch and tag:
+
+
+1)Branch
+	
+	a) it is mutable
+	b) inline development we create branch
+
+2) Tag
+
+	a) it is immutable
+	b) In production development we create tag
+
+
+difference between git revert and git reset:
+
+Git Revert:
+
+	It will delete the updated information and also all commit id's
+
+Git Reset:
+
+	It will move all files to tagging area to working area
+
+
+difference between git merge and git rebase:
+
+Git Merge:
+
+	Integrate code from one branch to another
+
+Git rebase:
+	
+	Integrate code from one branch to another
+
+
+Github areas:
+
+
+1) Working area:
+
+	Whatever files we created it will be available in working area
+
+2) Staging area:
+
+	It is a place we have to keep the updated files
+
+3) local area:
+
+	First develop the code and store in this
+
+4) Remote area:
+
+	Github
+
+
+commands in git:
+
+1) git --version --> to display the git version
+
+2)git add filename --> particular files moves to working area to staging area
+
+3)git config --global --list --> displays all username and email id's
+
+
+4)git branch -d branchname --> delete the branch only in local area
+
+5)git clean --> it will clean all files whatever in working area
+
+6)git log --> displays all commit id's
+
+5)git show command id --> how many files added in particular commits
+
+6)git branch -r --> displays all remote branches
+
+7)git chechout branchname --> it will switch to other branch
+
+8)git chechout -b branchname --> it will switch to other branch by creating the branch
+
+
+Tags: 
+
+1)git tag: it will create a tag
+
+2)git tag --all: it will display all tags
+
+
+
+1) Git stash --> in working area it will takes backups as temporary storage
+
+2) git stash list --> it display backup stash list
+
+3) git fetch --> it will get the update from git remote repo and will update your local repo but not merge with local working copy
+
+4)git clean --> to clear all the files in repo
+
+
