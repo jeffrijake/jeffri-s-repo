@@ -1,0 +1,110 @@
+main.tf
+
+
+	resource "aws_lb" "my_alb" {
+	  name               = var.alb_name
+	  internal           = var.alb_internal
+	  load_balancer_type = "application"
+	  subnets            = var.subnet_ids
+	  security_groups    = [var.alb_security_group_id]
+	}
+	
+	resource "aws_lb" "my_nlb" {
+	  name               = var.nlb_name
+	  internal           = var.nlb_internal
+	  load_balancer_type = "network"
+	  subnets            = var.subnet_ids
+	  security_groups    = [var.nlb_security_group_id]
+	}
+	
+	
+	resource "aws_lb_listener" "alb_listener" {
+	  load_balancer_arn = aws_lb.my_alb.arn
+	  port              = var.alb_listener_port
+	  protocol          = var.alb_listener_protocol
+	
+	  default_action {
+	    type             = "fixed-response"
+	    status_code      = 200
+	    content_type     = "text/plain"
+	    message_body     = "OK"
+	  }
+	}
+	
+	resource "aws_lb_listener" "nlb_listener" {
+	  load_balancer_arn = aws_lb.my_nlb.arn
+	  port              = var.nlb_listener_port
+	  protocol          = var.nlb_listener_protocol
+	
+	  default_action {
+	    type             = "forward"
+	    target_group_arn = var.nlb_target_group_arn
+	  }
+	}
+
+variables.tf
+
+	variable "alb_name" {
+	  description = "Name for the Application Load Balancer"
+	}
+	
+	variable "nlb_name" {
+	  description = "Name for the Network Load Balancer"
+	}
+	
+	variable "alb_internal" {
+	  description = "Set to true if the ALB is internal"
+	  default     = false
+	}
+	
+	variable "nlb_internal" {
+	  description = "Set to true if the NLB is internal"
+	  default     = false
+	}
+	
+	variable "subnet_ids" {
+	  type        = list(string)
+	  description = "List of subnet IDs where the load balancers will be placed"
+	}
+	
+	variable "alb_security_group_id" {
+	  description = "Security Group ID for the ALB"
+	}
+	
+	variable "nlb_security_group_id" {
+	  description = "Security Group ID for the NLB"
+	}
+	
+	variable "alb_listener_port" {
+	  description = "Port for the ALB listener"
+	}
+	
+	variable "alb_listener_protocol" {
+	  description = "Protocol for the ALB listener (e.g., HTTP, HTTPS)"
+	}
+	
+	variable "nlb_listener_port" {
+	  description = "Port for the NLB listener"
+	}
+	
+	variable "nlb_listener_protocol" {
+	  description = "Protocol for the NLB listener (e.g., TCP, UDP)"
+	}
+	
+	variable "nlb_target_group_arn" {
+	  description = "ARN of the target group for NLB listener forwarding"
+	}
+
+outputs.tf
+
+
+	output "alb_dns_name" {
+	  value = aws_lb.my_alb.dns_name
+	}
+	
+	output "nlb_dns_name" {
+	  value = aws_lb.my_nlb.dns_name
+	}
+
+
+
