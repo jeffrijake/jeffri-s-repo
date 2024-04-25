@@ -1,0 +1,100 @@
+LVM:
+
+	It is a feature in Linux that allows for flexible management of storage devices. you can create logical volumes that spars multiple physical disks, resize volumes on-the-fly, take snapshots for backup purpose.
+
+
+	LVM is used to manage volume and disk on the linux server, logical volume manager allows disks to be combined together.
+
+
+Examples of LVM:
+
+	Like partition of disk in windows C,D drive similarly we can do the same in the Linux.
+
+
+	Single disk can be divided into different partitions.
+
+	Multiple disks combined and group them into one, then change it into different partitions.
+
+
+
+
+Eg:1
+
+	We can divide one physical volume to volume group into logical volume
+
+Eg:2
+
+	we can divide multiple physical volumes to volume group into multiple logical volumes
+
+
+Advantages of LVM:
+
+	In case of disk is running out of space, you can add new disk without breaking partitions of your file system
+
+Possibilities of LVM:
+
+	1) New space can be created on a server for new project
+	2) In case of low disk space, increase the space
+	3) In case of extra space allocated to a partition, capacity can be reallocated redure capacity in one volume group and add it to another
+
+	
+Steps of LVM for adding new space:
+
+	1) Install a new hard disk drive
+	2) Make a partition to use it
+	3) Designate physical volume (PV)
+	4) Manage volume group (VG)
+	5) Manage logical volume (LV)
+	6) Apply a filesystem
+	7) Set a mount point
+
+
+
+
+pvcreate: Used to initialize physical volumes for use by LVM.
+
+	Example: sudo pvcreate /dev/sdb
+	
+vgcreate: Creates a volume group, which is a collection of physical volumes.
+
+	Example: sudo vgcreate myvg /dev/sdb
+	
+lvcreate: Creates a logical volume within a volume group.
+
+	Example: sudo lvcreate -L 10G -n mylv myvg
+	
+lvextend: Extends the size of a logical volume.
+
+	Example: sudo lvextend -L +5G /dev/myvg/mylv
+	
+lvresize: Resizes a logical volume to a specific size.
+
+	Example: sudo lvresize -L 15G /dev/myvg/mylv
+	
+lvreduce: Reduces the size of a logical volume.
+
+	Example: sudo lvreduce -L 5G /dev/myvg/mylv
+	
+pvdisplay: Displays information about physical volumes.
+
+	Example: sudo pvdisplay
+	
+vgdisplay: Displays information about volume groups.
+
+	Example: sudo vgdisplay
+	
+lvdisplay: Displays information about logical volumes.
+
+	Example: sudo lvdisplay
+	
+lvremove: Removes a logical volume.
+
+	Example: sudo lvremove /dev/myvg/mylv
+	
+vgremove: Removes a volume group.
+
+	Example: sudo vgremove myvg
+	
+pvremove: Removes a physical volume from LVM control.
+
+	Example: sudo pvremove /dev/sdb
