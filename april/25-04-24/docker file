@@ -1,0 +1,60 @@
+Now we to create container from our own image, therefore we are create a container:
+
+	docker run --it --name jeffriexample ubuntu /bin/bash
+
+
+Now we need to create a new file in tmp directory
+
+	mkdir tmp
+	cd tmp/
+
+	touch file
+
+to check the images in docker 
+	
+	docker images
+
+
+Docker file:
+	
+	It is a text file which contains some set of instructions
+
+components in docker file:
+
+1) From: for base image, this command must be on top of the dockerfile.
+
+2) RUN: To execute commands,it will crate a layer in image
+
+3) Maintainer: Author (or) Owner (or) Description
+
+4) Copy: Copy files from Local System (we need to provide source,destination)
+
+5) ADD: Similar to copy but, it provides a feature to download files from internet, also we extract file at docker image side.
+
+6) EXPOSE: to expose ports such as port 8080 for tomcat, port 80 for nginx etc
+
+7) WORDDIR: to set working directory for a container
+
+8) CMD: execute commands but during container creation 
+
+9) ENTRYPOINT: Similar to CMD but has higher priority over CMD, first command will be executed by entrypoint only.
+
+10) ENV: Envirnomental variables 
+
+
+
+
+
+1) Creating one Dockerfile
+
+	vi Dockerfile (D should be capital)
+
+2) create one docker file
+
+FROM ubuntu
+RUN echo "hello this is an example dockerfile" > /tmp/examplefile
+
+3) execute the docker file
+
+	docker build -t test . 
+
