@@ -1,0 +1,89 @@
+                    Docker
+
+Container is like a virtual machine
+
+Docker is a tool which creates the Virtual machine.
+
+
+1) Docker Engine:
+
+	It is an open-source tool that allows us to create, run and manage containers.
+
+difference between Docker and VM's:
+
+Virtual Machines:
+
+1) It takes a few minutes for VMs to boot
+
+2) Ready-made VMs are challenging to find
+
+3) Tools are easy to use and more straightforward to work with. third-party
+
+4) Can run a variety of guest OS
+
+5) VMs make use of the hypervisor
+
+6) It is heavyweight
+
+7) Host OS can be different from guest OS
+
+8) Cannot run more than a couple of VMS  on an average laptop
+
+9) Each VMS gets its virtual network adapter
+
+10) sharing library and files are not possible
+
+11) Security depends on the hypervisor
+
+12) VMS is dependent on a hypervisor
+
+13) It provides easiness in managing applications, recovery mechanisms, and isolation from the host operating system
+
+
+Docker:
+
+1) It boots in a few seconds
+
+2) Pre-built docker containers are readily available
+
+3) Docker has a complex usage mechanism consisting of both third-party and docker-managed tools
+
+4) Limited to Linux
+
+5) Dockers make use of the execution engine
+
+6) It is lightweight
+
+7) Host OS can be different from container OS
+
+8) Can run many docker containers on a laptop
+
+9) Docker can get a virtual network adapter. It can have separate IPs and Ports
+
+10) Sharing of files is possible
+
+11) Lacks security measures
+
+12) A container is portable
+
+13) It allows running an application in an isolated environment known as a container 
+
+Advantages of Docker:
+
+1) Docker containers provide a high degree of application isolation. Each container encapsulates the application and its dependencies, ensuring consistency and preventing conflicts with other applications running on the same system.
+
+2) Docker containers are portable across different environments. Once an application is containerized, it can run on any system that has Docker installed, regardless of the underlying infrastructure or OS.
+
+3) Containers are lightweight and share the host OS kernel, leading to efficient resource utilization. They consume fewer system resources compared to virtual machines, making Docker suitable for deploying multiple applications on the same host.
+
+4) Docker images are versioned, enabling developers to track changes, revert to previous versions, and collaborate effectively using version control systems like Git
+
+
+
+Disadvantages of Docker:
+
+1) Docker networking can be complex, especially in distributed or multi-container applications. Managing network configurations, service discovery, and communication between containers may require additional expertise
+
+2) While Docker provides isolation, misconfigurations or vulnerabilities in container images or runtime environments can pose security risks. Proper security practices, image scanning, and regular updates are essential to mitigate these risks
+
+3) Docker compatibility can be a concern, especially when dealing with legacy applications or software that requires specific OS versions or configurations. Ensuring compatibility across different environments may require additional testing and configuration
