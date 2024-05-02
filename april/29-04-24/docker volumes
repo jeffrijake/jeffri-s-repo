@@ -1,0 +1,77 @@
+Docker volumes:
+
+		Docker volumes are a fundamental feature for managing data in Docker containers, providing a flexible and reliable way to handle persistent storage needs.
+
+
+		It is a way to persist and manage data generated and used by Docker containers. it is a feature that allows containers to store data independently of the container
+
+		
+		 Data stored in a volume remains even after the container using that volume is stopped or removed. This is crucial for applications that need to store data, such as databases or file storage systems.
+
+
+
+Types of Volumes:
+
+Host-mounted volumes: 
+
+	These volumes map a directory from the host machine into the container. Changes made in the container are reflected on the host and vice versa.
+
+Docker-managed volumes: 
+
+	Docker creates and manages these volumes internally. They are not tied to specific directories on the host and are typically used for sharing data between containers or for persistent data storage.
+
+Named volumes: 
+
+	These are user-friendly names assigned to volumes, making it easier to manage and reference volumes in Docker commands and configurations
+
+
+Use Cases:
+
+File Sharing: 
+	
+	Volumes can be shared between containers to facilitate communication and data exchange.
+
+Configuration Management: 
+
+	Storing configuration files in volumes allows containers to access consistent configurations.
+
+Backup and Restore: 
+
+	Volumes simplify the backup and restore process by isolating data from container lifecycles.
+
+
+steps for volume configuration:
+
+
+1 ) create a volume 
+
+	docker volume create jeffritest_volume
+
+2) List volumes:
+
+	docker volume ls
+
+3) To inspect a specific volume:
+
+	docker volume inspect jeffritest_volume
+
+4) to mount a volume: 
+
+	docker run -d --name <container_name> -v <volume_name>:<container_mount_path> <image_name>
+
+
+5) To inspect a Container's Volumes
+
+	docker inspect <container_name>
+
+6) To remove a volume: 
+
+	docker volume rm jeffritest_volume
+
+7) to remove unused volume:
+
+	docker volume prune
+
+
+
+
