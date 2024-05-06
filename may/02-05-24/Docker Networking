@@ -1,0 +1,43 @@
+Docker networking
+
+
+It refers to the mechanisms and tools Docker provides for managing network communication between containers, between containers and the host system, and between containers and external networks
+
+
+few point which can explain docker networking
+
+1) Bridge Networking:
+
+	Default Network: 
+	
+	When you install Docker, it creates a default bridge network called bridge. Containers connected to this network can communicate with each other via IP addresses.
+
+
+	Container Isolation: 
+	
+	By default, containers on the bridge network are isolated from external networks unless you explicitly expose ports or use port mapping.
+
+
+2) Host Networking:
+
+		
+		When you use host networking (--network host), the container shares the host's network stack. This means the container can access services running on the host's network without needing port mappings. Host networking can offer better performance for applications that require high network throughput or low latency.
+
+3) Overlay Networking:
+
+		Docker Swarm uses overlay networks to enable communication between containers running on different hosts in a cluster.Overlay networks provide secure communication between containers by encrypting traffic between nodes.
+
+
+4) Custom Bridge Networks:
+
+	
+		Docker allows you to create custom bridge networks using docker network create. These networks can have specific configurations like subnet ranges, gateway settings, and DNS options.Containers attached to the same custom bridge network can communicate with each other using their container names or service discovery within the network.
+
+5) External Network Access:
+
+		Docker enables containers to expose ports to the host or to external networks using port mapping (-p or --publish option).Containers can access external networks directly if the host has network connectivity.
+
+
+6) Service Discovery and DNS:
+
+		Docker provides built-in DNS resolution for containers within the same network. Containers can resolve each other's names using their container names as DNS entries.Docker can also integrate with external DNS services for name resolution

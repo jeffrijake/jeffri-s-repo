@@ -1,0 +1,73 @@
+docker storage drivers
+
+
+These are essential components that manage how Docker containers handle storage and manage data on the host system
+
+Each storage driver has unique characteristics, performance profiles, and compatibility with different operating systems and storage technologies. 
+
+
+1) OverlayFS (Overlay2):
+
+	Features: Efficient copy-on-write behavior, layered filesystem, good performance.
+
+	Compatibility: Linux with modern kernels, default for many distributions.
+
+	Usage: Automatically selected as the default storage driver in many Linux distributions.
+
+	Command: 
+		
+			docker run --storage-driver overlay2 <image>
+
+
+
+2)Aufs (Advanced Multi-Layered Unification Filesystem):
+
+	Features: Merges multiple layers into a single directory, good for storage efficiency.
+
+	Compatibility: Older Linux systems.
+
+	Usage: Specify Aufs as the storage driver explicitly
+
+	command: 
+
+			docker run --storage-driver aufs <image>
+
+
+3) Device Mapper:
+
+	Features: Uses block devices, supports advanced storage features like snapshots and thin provisioning.
+
+	Compatibility: Linux with Device Mapper support.
+
+	Usage: Specify Device Mapper as the storage driver explicitly
+
+	command:
+
+		docker run --storage-driver devicemapper <image>
+
+4) Btrfs (B-tree file system):
+
+
+	Features: Modern filesystem with features like snapshots and copy-on-write.
+
+	Compatibility: Linux with Btrfs support.
+
+	Usage: Specify Btrfs as the storage driver explicitly
+
+	command:
+
+			docker run --storage-driver btrfs <image>
+
+
+5) VFS (Virtual File System):
+
+	Features: Basic storage driver using the host's native filesystem, no advanced features.
+
+	Compatibility: Most platforms, used for testing and compatibility purposes.
+
+	Usage: Specify VFS as the storage driver explicitly
+
+	command:
+
+			docker run --storage-driver vfs <image>
+
