@@ -1,0 +1,51 @@
+Demo: bike-website-demo
+
+
+
+Docker file:
+
+	# Use an official Nginx runtime as the base image
+	FROM nginx:alpine
+	
+	# Copy the HTML file into the Nginx server's public directory
+	COPY index.html /usr/share/nginx/html/index.html
+	
+	# Expose port 80 to allow external access to the Nginx server
+	EXPOSE 80
+
+
+
+index.html:
+
+	<!DOCTYPE html>
+	<html lang="en">
+	<head>
+	    <meta charset="UTF-8">
+	    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	    <title>Bike Website Demo</title>
+	</head>
+	<body>
+	    <h1>Welcome to the Bike Website!</h1>
+	    <p>This is a simple demo website about bikes.</p>
+	</body>
+	</html>
+	
+
+
+docker compose:
+
+	version: '3.8'
+	
+	services:
+	  web:
+	    build: .
+	    ports:
+	      - "8080:80"
+
+
+
+
+
+	
+		 
+
