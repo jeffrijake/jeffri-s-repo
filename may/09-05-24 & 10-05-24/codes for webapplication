@@ -1,0 +1,99 @@
+Sample nginx webapplication:
+
+Dockerfile:
+
+	FROM debian:latest
+	
+	# Install Nginx
+	RUN apt-get update && apt-get install -y nginx
+	
+	# Copy the default Nginx configuration file
+	COPY default.conf /etc/nginx/conf.d/
+	
+	# Copy the HTML file
+	COPY index.html /usr/share/nginx/html/
+	
+	# Expose the port
+	EXPOSE 8080
+	
+	# Run Nginx when the container starts
+	CMD ["nginx", "-g", "daemon off;"]
+
+index.html:
+
+	<!DOCTYPE html>
+	<html>
+	  <head>
+	    <title>My Webpage</title>
+	  </head>
+	  <body>
+	    <h1>Welcome to my webpage!</h1>
+	    <p>This is a simple webpage running on Nginx in a Docker container.</p>
+	  </body>
+	</html>
+	~
+
+
+
+default.conf:
+
+	server {
+	    listen 80;
+	    location / {
+	        root /usr/share/nginx/html;
+	        index index.html index.htm;
+	    }
+	}
+
+
+--------------------------------------------------------------------
+bikewebsite
+
+Dockerfile:
+
+
+	# Use Node 16 alpine as parent image
+	FROM node:16-alpine
+	
+	# Create a working directory
+	WORKDIR /app
+	
+	# Copy package.json and package-lock.json (if exists)
+	COPY package*.json ./
+	
+	# Install dependencies
+	RUN npm install
+	
+	# Copy the rest of project files into this image
+	COPY . .
+	
+	EXPOSE 80
+
+package.json:
+
+
+	  {
+	  "name": "bike-website",
+	  "version": "1.0.0",
+	  "scripts": {
+	    "start": "node server.js"
+	  },
+	  "dependencies": {
+	    "express": "^4.17.1"
+	  }
+	}
+
+server.js:
+
+	const express = require('express');
+	const app = express();
+	
+	app.get('/', (req, res) => {
+	  res.send('Welcome to Bike Website!');
+	});
+	
+	app.listen(3000, () => {
+	  console.log('Bike website started on port 3000');
+	});
+
+
