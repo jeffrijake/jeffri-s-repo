@@ -1,0 +1,118 @@
+test -2 of webapplication
+
+
+	mkdir ecommerce-platform
+	cd ecommerce-platform
+
+Initialize a Node.js backend
+
+	npm init -y
+	npm install express pg
+
+
+Initialize a React frontend
+
+	npx create-react-app frontend
+	cd frontend
+
+Backend Setup
+
+
+server.js
+
+	const express = require('express');
+	const { Pool } = require('pg');
+	
+	const app = express();
+	const port = 5000;
+	
+	const pool = new Pool({
+	  user: 'postgres',
+	  host: 'db',
+	  database: 'ecommerce',
+	  password: 'password',
+	  port: 5432,
+	});
+	
+	app.get('/api/products', async (req, res) => {
+	  try {
+	    const { rows } = await pool.query('SELECT * FROM products');
+	    res.json(rows);
+	  } catch (error) {
+	    console.error('Error fetching products:', error);
+	    res.status(500).json({ error: 'Internal Server Error' });
+	  }
+	});
+	
+	app.listen(port, () => {
+	  console.log(`Server running on port ${port}`);
+	});
+
+
+Dockerfile
+
+
+	FROM node:14
+	
+	WORKDIR /app
+	
+	COPY package*.json ./
+	RUN npm install
+	
+	COPY . .
+	
+	EXPOSE 5000
+	CMD ["node", "server.js"]
+
+Frontend Setup
+
+Update the package.json file in the frontend directory to proxy API requests to the backend
+
+
+	"proxy": "http://localhost:5000"
+
+Build the frontend
+
+	npm run build
+
+
+In the main directory create "docker-compose"
+
+
+	version: '3'
+	services:
+	  backend:
+	    build: .
+	    ports:
+	      - "5000:5000"
+	    depends_on:
+	      - db
+	  frontend:
+	    image: nginx:alpine
+	    volumes:
+	      - ./frontend/build:/usr/share/nginx/html
+	    ports:
+	      - "80:80"
+	  db:
+	    image: postgres:latest
+	    environment:
+	      POSTGRES_USER: postgres
+	      POSTGRES_PASSWORD: password
+	      POSTGRES_DB: ecommerce
+
+
+Build and Run Containers
+
+	docker-compose up --build
+
+
+accessing through the internet 
+
+	curl http://localhost:5000/
+
+
+
+
+
+
+
