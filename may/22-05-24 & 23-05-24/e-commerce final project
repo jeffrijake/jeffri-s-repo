@@ -1,0 +1,158 @@
+project -  ecommerce:
+
+
+structure:
+
+	ecommerce-app/
+	├── frontend/
+	│   ├── Dockerfile
+	│   ├── package.json
+	│   └── src/
+	│       └── index.js
+	├── backend/
+	│   ├── Dockerfile
+	│   ├── requirements.txt
+	│   └── app/
+	│       └── app.py
+	├── nginx/
+	│   ├── Dockerfile
+	│   └── nginx.conf
+	└── docker-compose.yml
+
+
+frontend:
+	
+	FROM node:14-alpine
+	
+	WORKDIR /app
+	
+	COPY package.json ./
+	RUN npm install
+	
+	COPY . .
+	
+	EXPOSE 3000
+	CMD ["npm", "start"]
+
+package.json:
+
+	 "name": "frontend",
+	  "version": "1.0.0",
+	  "scripts": {
+	    "start": "node src/index.js"
+	  },
+	  "dependencies": {
+	    "express": "^4.17.1"
+	  }
+	}
+
+
+src/index.json:
+
+	const express = require('express');
+	const app = express();
+	const port = 3000;
+	
+	app.get('/', (req, res) => {
+	  res.send('Hello,welcome to the Jeffri E-commerce website!');
+	});
+	
+	app.listen(port, () => {
+	  console.log(`Frontend app listening at http://localhost:${port}`);
+	});
+
+
+Backend:
+
+
+Dockerfile:
+
+	FROM python:3.9-alpine
+	
+	WORKDIR /app
+	
+	COPY requirements.txt ./
+	RUN pip install -r requirements.txt
+	
+	COPY . .
+	
+	EXPOSE 5000
+	CMD ["python", "app/app.py"]
+
+requirements.txt:
+
+	Werkzeug==2.0.1
+
+app.py:
+
+	from flask import Flask
+	app = Flask(__name__)
+	
+	@app.route('/')
+	def hello_world():
+	    return 'Hello welcome to the backend of the E-commerce website!'
+	
+	if __name__ == '__main__':
+	    app.run(host='0.0.0.0', port=5000)
+
+
+Nginx:
+
+Dockerfile:
+
+	FROM nginx:alpine
+	
+	COPY nginx.conf /etc/nginx/nginx.conf
+
+nginx.conf:
+
+	events {}
+	
+	http {
+	    upstream frontend {
+	        server frontend:3000;
+	    }
+	
+	    upstream backend {
+	        server backend:5000;
+	    }
+	
+	    server {
+	        listen 8080;
+	
+	        location / {
+	            proxy_pass http://frontend;
+	        }
+	
+	        location /api {
+
+
+
+main:
+
+docker-compose.yml:
+
+	services:
+	  frontend:
+	    build:
+	      context: ./frontend
+	    volumes:
+	      - ./frontend/src:/app/src
+	    ports:
+	      - "3000:3000"
+	
+	  backend:
+	    build:
+	      context: ./backend
+	    volumes:
+	      - ./backend/app:/app/app
+	    ports:
+	      - "5000:5000"
+	
+	  nginx:
+		build:                                                                                                                        	context: ./nginx                                                                                                                        
+	    ports:                                                                                                          
+	      - "8080:8080"                                                                                                                 
+	    depends_on:                                                                                                                 
+	      - frontend                                                                                                              
+	      - backend
