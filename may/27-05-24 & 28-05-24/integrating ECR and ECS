@@ -1,0 +1,47 @@
+Integrating Docker-based application with Amazon Elastic Container Service (ECS) and Amazon Elastic Container Registry (ECR):
+
+
+1) Create ECR Repositories:
+
+	aws ecr create-repository --repository-name e-commerce-frontend
+	aws ecr create-repository --repository-name e-commerce-backend
+	aws ecr create-repository --repository-name e-commerce-nginx
+
+
+2) Build and Push Docker Images to ECR:
+
+Authenticate Docker:
+
+	aws ecr get-login-password --region <your-region> | docker login --username AWS --password-stdin <your-account-id>.dkr.ecr.<your-region>.amazonaws.com
+
+Build the Docker images:
+
+	docker build -t e-commerce-frontend ./frontend
+	docker build -t e-commerce-backend ./backend
+	docker build -t e-commerce-nginx ./nginx
+
+Tag the Docker images with the ECR repository URIs
+
+	docker tag e-commerce-frontend:latest <your-account-id>.dkr.ecr.<your-region>.amazonaws.com/e-commerce-frontend:latest
+	docker tag e-commerce-backend:latest <your-account-id>.dkr.ecr.<your-region>.amazonaws.com/e-commerce-backend:latest
+	docker tag e-commerce-nginx:latest <your-account-id>.dkr.ecr.<your-region>.amazonaws.com/e-commerce-nginx:latest
+
+Push the Docker images to ECR:
+
+	docker push <your-account-id>.dkr.ecr.<your-region>.amazonaws.com/e-commerce-frontend:latest
+	docker push <your-account-id>.dkr.ecr.<your-region>.amazonaws.com/e-commerce-backend:latest
+	docker push <your-account-id>.dkr.ecr.<your-region>.amazonaws.com/e-commerce-nginx:latest
+
+
+
+Set Up an ECS Cluster:
+
+
+1. Create an ECS cluster
+2. Create task definitions for each service (frontend, backend, nginx)
+3. Create ECS services for each task definition
+4. Create an Application Load Balancer (ALB) and configure listeners and target groups for your services
+5. Update the ECS services to use the ALB target groups
+6. configure Auto scaling for the ECS
+7. Check the ECS cluster in the AWS Management Console to ensure services are running.
+8. Access the frontend service using the public IP or DNS of the load balancer
