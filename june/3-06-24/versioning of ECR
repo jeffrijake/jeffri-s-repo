@@ -1,0 +1,22 @@
+Versioning of docker images for ECR:
+
+ECR does not have versioning Feature because it is designed to store and manage container images.However, we can implement versioning in your development and deployment processes using tags.
+
+1) Tag Your Docker Images:
+
+	docker build -t my-repo/my-image:1.0.0 .
+
+2) Pushing Tagged Images to ECR:
+
+	aws ecr get-login-password --region <your-region> | docker login --username AWS --password-stdin <your-aws-account-id>.dkr.ecr.<your-region>.amazonaws.com
+
+3)Push the tagged image:
+
+	docker tag my-repo/my-image:1.0.0 <your-aws-account-id>.dkr.ecr.<your-region>.amazonaws.com/my-repo:1.0.0
+
+	docker push <your-aws-account-id>.dkr.ecr.<your-region>.amazonaws.com/my-repo:1.0.0
+
+
+
+
+

@@ -1,0 +1,66 @@
+Integrating ALB and Autoscaling to ECS:
+
+
+1) Go to AWS Console and search "EC2"
+2) select EC2 console and drag down there we will get "Load Balancers"
+3) Select "Create Load Balancer", Choose "Application Load Balancer"
+4) Enter a name for your ALB
+5) Select the scheme (internet-facing or internal).Select the VPC and subnets.
+6) Select or create a security group that allows HTTP (port 80) and/or HTTPS (port 443) traffic.
+
+Configure Listeners and Routing:
+
+	Add a listener for HTTP (port 80) or HTTPS (port 443) and Create target groups for each of your ECS services (frontend, backend, nginx)
+
+Create a Target Group for Each ECS Service:
+
+	Go to the "Target Groups" section in the EC2 Dashboard.
+	Create a target group for each service (e.g., frontend-target-group, backend-target-group, nginx-target-group).
+	Select the target type as "IP".
+	Choose the appropriate protocol (HTTP or HTTPS) and port (3000 for frontend, 5000 for backend, 80 for nginx).
+	Set the health check path (e.g., / or /health).
+
+Register Targets:
+
+	Once the target groups are created, they will be empty.
+	Targets will be automatically registered when ECS services are deployed and running.
+
+Edit the ECS task definitions to include the load balancer information
+
+Update ECS Services:
+
+	Go to the ECS cluster in the AWS Management Console.
+	Edit each service to add the load balancer configuration.
+	Add the appropriate target group for each service.
+	for frontend service:
+		Load balancer type: Application Load Balancer
+		Service name: frontend-service
+		Container name: frontend
+		Container port: 3000
+		Target group name: frontend-target-group
+
+
+
+Create an Auto Scaling Policy:
+
+	Go to the ECS cluster in the AWS Management Console.
+	Select the service you want to configure auto-scaling for (e.g., frontend-service).
+	Choose the "Auto Scaling" tab and create a new scaling policy.
+	Configure the scaling policy (e.g., scale out when CPU utilization is above 75%).
+
+Define Scaling Policies:
+
+scaling policy configuration:
+
+	Minimum number of tasks: 1
+	Desired number of tasks: 2
+	Maximum number of tasks: 4
+	Target tracking scaling policy:
+	Metric type: ECS service average CPU utilization
+	Target value: 75
+	Scale in cooldown: 300 seconds
+	Scale out cooldown: 300 seconds
+
+
+
+
