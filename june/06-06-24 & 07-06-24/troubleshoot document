@@ -1,0 +1,35 @@
+1) Go to the AWS console and open ECS cluster
+2) Select the ECS cluster to which we are troubleshooting
+3) Select the service in which we are doing troubleshooting
+4) Go to configuration and networking tab and select task definations
+5) Go to json tab and copy the port configuration. eg: containerport : 80
+6) Go back to service and select the security group.
+
+both the port should be same eg: 80 (inbound)
+
+we can monitor the health check under the health and metric tab.
+
+7)if the application needs more time to warm up than the timeout value specified in the health check settings of the target group then specify the health check grace period as an amazon ECS service definition parameter (this instruct the service schedular to ignore any failed load balancer health check for a predefined time period after a task has been instated.
+
+To edit the value click on update service:
+
+1)go to load balancer and adjust the health check grace period.
+
+confirm that the health check port value for load balancer is configured correctly
+
+
+1) Go to ecs cluster and select the "task tab"
+2) select the Network binding the health check port must be configured to use the host port value for the container in your service task defination.
+
+select the target group associated with ecs service, go to health check tab and make sure that health check port and health check path are configured correctly.
+
+again select the target group associated with the ecs service, go to the health check tab and edit the timeout.
+
+
+
+
+If you receive a 504 error, such as:
+
+	(service-aws) (port 8080) is unhealthy in target group due to (reason health check failed with these codes:[504]
+
+for it reason might be because your load balancer failed to establish a connection to the target before the connection timeout expored (10 seconds).
