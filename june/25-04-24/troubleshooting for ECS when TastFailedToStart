@@ -1,0 +1,21 @@
+Troubleshooting Amazon ECS TaskFailedToStart errors
+
+
+We are troubleshooting the "TaskFailedToStart" error messages and actions that you can take to fix the errors.
+
+The following are some errors:
+
+1) Unexpected EC2 error while attempting to Create Network Interface with public IP assignment enabled in subnet 'subnet-id
+
+	This happens when a Fargate task that uses the aswsvpc network mode and runs in a subnet with a public IP address, and the subnet does not have enough IP addresses.
+
+	To fix this issue, you can create a new subnet to run your task.
+
+
+2) InternalError: 
+
+		This error occurs when an ENI attachment is requested.
+
+		Amazon EC2 asynchronously handles the provisioning of the ENI. The provisioning process takes time. Amazon ECS has a timeout in case there are long wait times or unreported failures.
+
+There are times when the ENI is provisioned, but the report comes to Amazon ECS after the failure timeout. In this case, Amazon ECS sees the reported task failure with an in-use ENI
