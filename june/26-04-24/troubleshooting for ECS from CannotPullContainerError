@@ -1,0 +1,18 @@
+CannotPullContainerError
+
+
+This error indicates that the task execution role being used doesn't have permission to communicate to Amazon ECS.
+
+the resolve this issue:
+
+	Verify that the Task Execution Role has the needed permissions. Amazon ECS provides the managed policy named AmazonECSTaskExecutionRolePolicy which contains the permissions for most use cases.
+
+	Verify the "ECR Service Endpoint" is accessible to: ecr.region.amazonaws.com and dkr.ecr.region.amazonaws.com
+
+	For private images needing authentication, ensure the "repositoryCredentials" and "credentialsParameter" are defined with the correct information. For more information, see Private registry authentication for tasks.
+
+
+Service endpoints:
+
+	The ecr and api.ecr endpoints are used for calls to the Amazon ECR API.
+	API actions such as DescribeImages and CreateRepository go to this endpoint.
