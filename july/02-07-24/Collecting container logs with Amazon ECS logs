@@ -1,0 +1,41 @@
+Collecting container logs with Amazon ECS logs collector:
+
+
+	To collect all of the various logs on your container instances, you can use the Amazon ECS logs collector.
+
+
+This script collects general operating system logs as well as Docker and Amazon ECS container agent logs, which are helpful for troubleshooting. It then compresses and archives the collected information into a single file that can easily be shared for diagnostic purposes.
+
+
+It also supports enabling debug mode for the Docker daemon and the Amazon ECS container agent on Amazon Linux variants, such as the Amazon ECS-optimized AMI.
+
+
+To download and run the Amazon ECS logs collector for Linux:
+
+
+	1.Download the Amazon ECS logs collector script
+
+		curl -O https://raw.githubusercontent.com/awslabs/ecs-logs-collector/master/ecs-logs-collector.sh
+
+
+	2.Run the script to collect the logs and create the archive.
+
+		sudo bash ./ecs-logs-collector.sh
+
+After running the script, you can examine the collected logs in the collect folder that the script created. 
+
+
+To download and run the Amazon ECS logs collector for Windows:
+
+	1.Download the Amazon ECS logs collector script using PowerShell.
+
+		Invoke-WebRequest -OutFile ecs-logs-collector.ps1 https://raw.githubusercontent.com/awslabs/aws-ecs-logs-collector-for-windows/master/ecs-logs-collector.ps1
+
+
+	2.Run the script to collect the logs and create the archive
+
+		.\ecs-logs-collector.ps1
+
+
+After running the script, you can examine the collected logs in the collect folder that the script created.
+
