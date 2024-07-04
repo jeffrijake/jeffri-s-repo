@@ -1,0 +1,20 @@
+Verifying task connectivity:
+
+
+	There are times when a task stops because of a network connectivity issue. It might be an intermittent issue, but it is most likely caused because the task cannot connect to an endpoint.
+
+
+You can use AWSSupport-TroubleshootECSTaskFailedToStart runbook to test the task connectivity. When you use the runbook, you need the following resource information:
+
+	1) The task ID Use the ID of the most recent failed task.
+
+	2) The cluster that the task was in.
+
+
+The runbook analyzes the task. You can view the results in the Output section for the following issues that can prevent a task from starting:
+
+	1) Network connectivity to the configured container registry
+
+	2) VPC endpoint connectivity
+
+	3) Security group rule configuration
