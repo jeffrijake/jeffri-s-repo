@@ -1,0 +1,127 @@
+First creating a folder named "ecs-cluster"
+
+ecs-cluster/main.tf
+
+	provider "aws" {
+	  region = var.region
+	}
+	
+	resource "aws_ecs_cluster" "this" {
+	  name = var.cluster_name
+	}
+	
+	output "ecs_cluster_id" {
+	  value = aws_ecs_cluster.this.id
+	}
+	
+	output "ecs_cluster_arn" {
+	  value = aws_ecs_cluster.this.arn
+	}
+
+
+ecs-cluster/variables.tf
+
+	variable "region" {
+	  description = "The AWS region to deploy the ECS cluster."
+	  type        = string
+	}
+	
+	variable "cluster_name" {
+	  description = "The name of the ECS cluster."
+	  type        = string
+	}
+
+
+ecs-cluster/outputs.tf
+
+	output "ecs_cluster_id" {
+	  description = "The ID of the ECS cluster."
+	  value       = aws_ecs_cluster.this.id
+	}
+	
+	output "ecs_cluster_arn" {
+	  description = "The ARN of the ECS cluster."
+	  value       = aws_ecs_cluster.this.arn
+	}
+
+
+ecs-cluster/versions.tf
+
+	terraform {
+	  required_version = ">= 0.12"
+	  required_providers {
+	    aws = {
+	      source  = "hashicorp/aws"
+	      version = "~> 3.0"
+	    }
+	  }
+	}
+
+
+In root (main folder)
+
+main.tf
+
+	provider "aws" {
+	  region = var.region
+	}
+	
+	module "ecs_cluster" {
+	  source       = "./ecs-cluster"
+	  region       = var.region
+	  cluster_name = var.cluster_name
+	}
+	
+	output "ecs_cluster_id" {
+	  value = module.ecs_cluster.ecs_cluster_id
+	}
+	
+	output "ecs_cluster_arn" {
+	  value = module.ecs_cluster.ecs_cluster_arn
+	}
+
+
+variables.tf
+
+	variable "region" {
+	  description = "The AWS region to deploy resources."
+	  type        = string
+	  default     = "us-west-2"
+	}
+	
+	variable "cluster_name" {
+	  description = "The name of the ECS cluster."
+	  type        = string
+	  default     = "my-ecs-cluster"
+	}
+
+
+outputs.tf
+
+	output "ecs_cluster_id" {
+	  description = "The ID of the ECS cluster."
+	  value       = module.ecs_cluster.ecs_cluster_id
+	}
+	
+	output "ecs_cluster_arn" {
+	  description = "The ARN of the ECS cluster."
+	  value       = module.ecs_cluster.ecs_cluster_arn
+	}
+
+
+versions.tf
+
+	terraform {
+	  required_version = ">= 0.12"
+	  required_providers {
+	    aws = {
+	      source  = "hashicorp/aws"
+	      version = "~> 3.0"
+	    }
+	  }
+	}
+
+
+
+
+
