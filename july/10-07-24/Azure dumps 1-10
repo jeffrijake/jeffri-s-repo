@@ -1,0 +1,129 @@
+Exam topics for Az-104
+
+1) Your company has serval departments. Each department has a number of virtual machines (VMs).
+The company has an Azure subscription that contains a resource group named RG1.
+All VMs are located in RG1.
+You want to associate each VM with its respective department.
+What should you do?
+
+	A. Create Azure Management Groups for each department.
+	B. Create a resource group for each department.
+	C. Assign tags to the virtual machines.
+	D. Modify the settings of the virtual machines.
+
+
+Answer: Assign tags to the virtual machines
+
+
+
+2) Your company has an Azure Active Directory (Azure AD) subscription.
+You want to implement an Azure AD conditional access policy.
+The policy must be configured to require members of the Global Administrators group to use Multi-Factor Authentication and an Azure AD-joined device when they connect to Azure AD from untrusted locations.
+Solution: You access the multi-factor authentication page to alter the user settings.
+Does the solution meet the goal?
+
+	A. Yes
+	B. No
+
+Answer: No
+
+
+3)Your company has an Azure Active Directory (Azure AD) subscription.
+You want to implement an Azure AD conditional access policy.
+The policy must be configured to require members of the Global Administrators group to use Multi-Factor Authentication and an Azure AD-joined device when they connect to Azure AD from untrusted locations.
+Solution: You access the Azure portal to alter the session control of the Azure AD conditional access policy.
+Does the solution meet the goal?
+
+	A. Yes
+	B. No
+
+Answer: No
+
+
+4) Your company has an Azure Active Directory (Azure AD) subscription.
+You want to implement an Azure AD conditional access policy.
+The policy must be configured to require members of the Global Administrators group to use Multi-Factor Authentication and an Azure AD-joined device when they connect to Azure AD from untrusted locations.
+Solution: You access the Azure portal to alter the grant control of the Azure AD conditional access policy.
+Does the solution meet the goal?
+
+	A. Yes
+	B. No
+
+
+Answer: Yes
+
+5) You are planning to deploy an Ubuntu Server virtual machine to your company's Azure subscription.
+You are required to implement a custom deployment that includes adding a particular trusted root certification authority (CA).
+Which of the following should you use to create the virtual machine?
+
+	A. The New-AzureRmVm cmdlet.
+	B. The New-AzVM cmdlet.
+	C. The Create-AzVM cmdlet.
+	D. The az vm create command.
+
+
+Answer: The Create-AzVM cmdlet
+
+
+6) Your company makes use of Multi-Factor Authentication for when users are not in the office. The Per Authentication option has been configured as the usage model.
+After the acquisition of a smaller business and the addition of the new staff to Azure Active Directory (Azure AD) obtains a different company and adding the new employees to Azure Active Directory (Azure AD), you are informed that these employees should also make use of Multi-Factor Authentication.
+To achieve this, the Per Enabled User setting must be set for the usage model.
+Solution: You reconfigure the existing usage model via the Azure portal.
+Does the solution meet the goal?
+
+	A. Yes
+	B. No
+
+Answer: No
+
+
+7) Your company's Azure solution makes use of Multi-Factor Authentication for when users are not in the office. The Per Authentication option has been configured as the usage model.
+After the acquisition of a smaller business and the addition of the new staff to Azure Active Directory (Azure AD) obtains a different company and adding the new employees to Azure Active Directory (Azure AD), you are informed that these employees should also make use of Multi-Factor Authentication.
+To achieve this, the Per Enabled User setting must be set for the usage model.
+Solution: You reconfigure the existing usage model via the Azure CLI.
+Does the solution meet the goal?
+
+
+	A. Yes
+	B. No
+
+Answer: No
+
+
+8) Your company's Azure solution makes use of Multi-Factor Authentication for when users are not in the office. The Per Authentication option has been configured as the usage model.
+After the acquisition of a smaller business and the addition of the new staff to Azure Active Directory (Azure AD) obtains a different company and adding the new employees to Azure Active Directory (Azure AD), you are informed that these employees should also make use of Multi-Factor Authentication.
+To achieve this, the Per Enabled User setting must be set for the usage model.
+Solution: You create a new Multi-Factor Authentication provider with a backup from the existing Multi-Factor Authentication provider data.
+Does the solution meet the goal?
+
+	A. Yes
+	B. No
+
+Answer: Yes
+
+
+9) Your company has an Azure Active Directory (Azure AD) tenant named weyland.com that is configured for hybrid coexistence with the on-premises Active
+Directory domain.
+You have a server named DirSync1 that is configured as a DirSync server.
+You create a new user account in the on-premise Active Directory. You now need to replicate the user information to Azure AD immediately.
+Solution: You run the Start-ADSyncSyncCycle -PolicyType Initial PowerShell cmdlet.
+Does the solution meet the goal?
+
+	A. Yes
+	B. No
+
+Answer: Yes
+
+
+10) Your company has an Azure Active Directory (Azure AD) tenant named weyland.com that is configured for hybrid coexistence with the on-premises Active
+Directory domain.
+You have a server named DirSync1 that is configured as a DirSync server.
+You create a new user account in the on-premise Active Directory. You now need to replicate the user information to Azure AD immediately.
+Solution: You use Active Directory Sites and Services to force replication of the Global Catalog on a domain controller.
+Does the solution meet the goal?
+
+	A. Yes
+	B. No
+
+
+Answer: No
