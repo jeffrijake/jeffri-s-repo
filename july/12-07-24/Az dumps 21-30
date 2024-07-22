@@ -1,0 +1,135 @@
+1) Your company has an Azure Active Directory (Azure AD) tenant that is configured for hybrid coexistence with the on-premises Active Directory domain.
+The on-premise virtual environment consists of virtual machines (VMs) running on Windows Server 2012 R2 Hyper-V host servers.
+You have created some PowerShell scripts to automate the configuration of newly created VMs. You plan to create several new VMs.
+You need a solution that ensures the scripts are run on the new VMs.
+Which of the following is the best solution?
+
+	A. Configure a SetupComplete.cmd batch file in the %windir%\setup\scripts directory.
+	B. Configure a Group Policy Object (GPO) to run the scripts as logon scripts.
+	C. Configure a Group Policy Object (GPO) to run the scripts as startup scripts.
+	D. Place the scripts in a new virtual hard disk (VHD).
+
+Answer: Configure a SetupComplete.cmd batch file in the %windir%\setup\scripts directory
+
+
+2) Your company has an Azure Active Directory (Azure AD) tenant that is configured for hybrid coexistence with the on-premises Active Directory domain.
+You plan to deploy several new virtual machines (VMs) in Azure. The VMs will have the same operating system and custom software requirements.
+You configure a reference VM in the on-premise virtual environment. You then generalize the VM to create an image.
+You need to upload the image to Azure to ensure that it is available for selection when you create the new Azure VMs.
+Which PowerShell cmdlets should you use?
+
+
+	A. Add-AzVM
+	B. Add-AzVhd
+	C. Add-AzImage
+	D. Add-AzImageDataDisk
+
+
+Answer:  Add-AzVhd
+
+
+3) Your company has an Azure subscription that includes a number of Azure virtual machines (VMs), which are all part of the same virtual network.
+Your company also has an on-premises Hyper-V server that hosts a VM, named VM1, which must be replicated to Azure.
+Which of the following objects that must be created to achieve this goal? 
+
+Answer: 1)Hyper V-site  2) Azure Recovery Services vault 3) Replication Policy.
+
+
+
+4) Your company's Azure subscription includes two Azure networks named VirtualNetworkA and VirtualNetworkB.
+VirtualNetworkA includes a VPN gateway that is configured to make use of static routing. Also, a site-to-site VPN connection exists between your company's on- premises network and VirtualNetworkA.
+You have configured a point-to-site VPN connection to VirtualNetworkA from a workstation running Windows 10. After configuring virtual network peering between
+VirtualNetworkA and VirtualNetworkB, you confirm that you are able to access VirtualNetworkB from the company's on-premises network. However, you find that you cannot establish a connection to VirtualNetworkB from the Windows 10 workstation.
+You have to make sure that a connection to VirtualNetworkB can be established from the Windows 10 workstation.
+Solution: You choose the Allow gateway transit setting on VirtualNetworkA.
+Does the solution meet the goal?
+
+
+	A. Yes
+	B. No
+
+
+Answer: No
+
+
+
+5) Your company's Azure subscription includes two Azure networks named VirtualNetworkA and VirtualNetworkB.
+VirtualNetworkA includes a VPN gateway that is configured to make use of static routing. Also, a site-to-site VPN connection exists between your company's on- premises network and VirtualNetworkA.
+You have configured a point-to-site VPN connection to VirtualNetworkA from a workstation running Windows 10. After configuring virtual network peering between
+VirtualNetworkA and VirtualNetworkB, you confirm that you are able to access VirtualNetworkB from the company's on-premises network. However, you find that you cannot establish a connection to VirtualNetworkB from the Windows 10 workstation.
+You have to make sure that a connection to VirtualNetworkB can be established from the Windows 10 workstation.
+Solution: You choose the Allow gateway transit setting on VirtualNetworkB.
+Does the solution meet the goal?
+
+	A. Yes
+	B. No
+
+Answer: No
+
+
+6) Your company's Azure subscription includes two Azure networks named VirtualNetworkA and VirtualNetworkB.
+VirtualNetworkA includes a VPN gateway that is configured to make use of static routing. Also, a site-to-site VPN connection exists between your company's on- premises network and VirtualNetworkA.
+You have configured a point-to-site VPN connection to VirtualNetworkA from a workstation running Windows 10. After configuring virtual network peering between
+VirtualNetworkA and VirtualNetworkB, you confirm that you are able to access VirtualNetworkB from the company's on-premises network. However, you find that you cannot establish a connection to VirtualNetworkB from the Windows 10 workstation.
+You have to make sure that a connection to VirtualNetworkB can be established from the Windows 10 workstation.
+Solution: You download and re-install the VPN client configuration package on the Windows 10 workstation.
+Does the solution meet the goal?
+
+	A. Yes
+	B. No
+
+Answer: Yes
+
+
+
+
+7) Your company has virtual machines (VMs) hosted in Microsoft Azure. The VMs are located in a single Azure virtual network named VNet1.
+The company has users that work remotely. The remote workers require access to the VMs on VNet1.
+You need to provide access for the remote workers.
+What should you do?
+
+	A. Configure a Site-to-Site (S2S) VPN.
+	B. Configure a VNet-toVNet VPN.
+	C. Configure a Point-to-Site (P2S) VPN.
+	D. Configure DirectAccess on a Windows Server 2012 server VM.
+	E. Configure a Multi-Site VPN
+
+
+answer:  Configure a Point-to-Site (P2S) VPN
+
+
+
+8) Your company has a Microsoft SQL Server Always On availability group configured on their Azure virtual machines (VMs).
+You need to configure an Azure internal load balancer as a listener for the availability group.
+Solution: You create an HTTP health probe on port 1433.
+Does the solution meet the goal?
+
+A. Yes
+B. No
+
+answer: No
+
+
+9) Your company has a Microsoft SQL Server Always On availability group configured on their Azure virtual machines (VMs).
+You need to configure an Azure internal load balancer as a listener for the availability group.
+Solution: You set Session persistence to Client IP.
+Does the solution meet the goal?
+
+	A. Yes
+	B. No
+
+
+Answer: No
+
+10) Your company has a Microsoft SQL Server Always On availability group configured on their Azure virtual machines (VMs).
+You need to configure an Azure internal load balancer as a listener for the availability group.
+Solution: You enable Floating IP.
+Does the solution meet the goal?
+
+	A. Yes
+	B. No
+
+Answer: Yes
+
+
+
