@@ -1,0 +1,163 @@
+1) You have an Azure Active Directory (Azure AD) tenant named contoso.onmicrosoft.com that contains 100 user accounts.
+You purchase 10 Azure AD Premium P2 licenses for the tenant.
+You need to ensure that 10 users can use all the Azure AD Premium features.
+What should you do?
+
+	A. From the Licenses blade of Azure AD, assign a license
+	B. From the Groups blade of each user, invite the users to a group
+	C. From the Azure AD domain, add an enterprise application
+	D. From the Directory role blade of each user, modify the directory role
+
+ans: From the Licenses blade of Azure AD, assign a license
+
+2) You have an Azure subscription named Subscription1 and an on-premises deployment of Microsoft System Center Service Manager.
+Subscription1 contains a virtual machine named VM1.
+You need to ensure that an alert is set in Service Manager when the amount of available memory on VM1 is below 10 percent.
+What should you do first?
+
+	A. Create an automation runbook
+	B. Deploy a function app
+	C. Deploy the IT Service Management Connector (ITSM)
+	D. Create a notification
+
+ans: Deploy the IT Service Management Connector (ITSM)
+
+
+3) You sign up for Azure Active Directory (Azure AD) Premium P2.
+You need to add a user named admin1@contoso.com as an administrator on all the computers that will be joined to the Azure AD domain.
+What should you configure in Azure AD?
+
+	A. Device settings from the Devices blade
+	B. Providers from the MFA Server blade
+	C. User settings from the Users blade
+	D. General settings from the Groups blade
+
+ans: Device settings from the Devices blade
+
+4) You have an Azure subscription named Subscription1 that contains a virtual network named VNet1. VNet1 is in a resource group named RG1.
+Subscription1 has a user named User1. User1 has the following roles:
+✑ Reader
+✑ Security Admin
+✑ Security Reader
+You need to ensure that User1 can assign the Reader role for VNet1 to other users.
+What should you do?
+
+	A. Remove User1 from the Security Reader and Reader roles for Subscription1.
+	B. Assign User1 the User Access Administrator role for VNet1.
+	C. Assign User1 the Network Contributor role for VNet1.
+	D. Assign User1 the Network Contributor role for RG1.
+
+ans: Assign User1 the User Access Administrator role for VNet1
+
+
+5) You have an Azure Active Directory (Azure AD) tenant named contosocloud.onmicrosoft.com.
+Your company has a public DNS zone for contoso.com.
+You add contoso.com as a custom domain name to Azure AD.
+You need to ensure that Azure can verify the domain name.
+Which type of DNS record should you create?
+
+	A. MX
+	B. NSEC
+	C. PTR
+	D. RRSIG
+
+ans: MX
+
+6) ou have an Azure Directory (Azure AD) tenant named Adatum and an Azure Subscription named Subscription1. Adatum contains a group named Developers.
+Subscription1 contains a resource group named Dev.
+You need to provide the Developers group with the ability to create Azure logic apps in the Dev resource group.
+Solution: On Subscription1, you assign the DevTest Labs User role to the Developers group.
+Does this meet the goal?
+
+	A. Yes
+	B. No
+
+ans: No
+
+7) You have an Azure Directory (Azure AD) tenant named Adatum and an Azure Subscription named Subscription1. Adatum contains a group named Developers.
+Subscription1 contains a resource group named Dev.
+You need to provide the Developers group with the ability to create Azure logic apps in the Dev resource group.
+Solution: On Subscription1, you assign the Logic App Operator role to the Developers group.
+Does this meet the goal?
+
+	A. Yes
+	B. No
+
+ans: No
+
+8) You have an Azure Directory (Azure AD) tenant named Adatum and an Azure Subscription named Subscription1. Adatum contains a group named Developers.
+Subscription1 contains a resource group named Dev.
+You need to provide the Developers group with the ability to create Azure logic apps in the Dev resource group.
+Solution: On Dev, you assign the Contributor role to the Developers group.
+Does this meet the goal?
+
+	A. Yes
+	B. No
+
+ans: Yes
+
+9) You have an Azure subscription named Subscription1 that contains an Azure Log Analytics workspace named Workspace1.
+You need to view the error events from a table named Event.
+Which query should you run in Workspace1?
+
+	A. Get-Event Event | where {$_.EventType == "error"}
+	B. search in (Event) "error"
+	C. select * from Event where EventType == "error"
+	D. search in (Event) * | where EventType -eq "error"
+
+ans: search in (Event) "error"
+
+10) You have an Azure subscription.
+Users access the resources in the subscription from either home or from customer sites. From home, users must establish a point-to-site VPN to access the Azure resources. The users on the customer sites access the Azure resources by using site-to-site VPNs.
+You have a line-of-business-app named App1 that runs on several Azure virtual machine. The virtual machines run Windows Server 2016.
+You need to ensure that the connections to App1 are spread across all the virtual machines.
+What are two possible Azure services that you can use? Each correct answer presents a complete solution.
+NOTE: Each correct selection is worth one point.
+
+	A. an internal load balancer
+	B. a public load balancer
+	C. an Azure Content Delivery Network (CDN)
+	D. Traffic Manager
+	E. an Azure Application Gateway
+
+ans: (1) an internal load balancer
+	 (2) an Azure Application Gateway
+
+11) You have an Azure subscription.
+You have 100 Azure virtual machines.
+You need to quickly identify underutilized virtual machines that can have their service tier changed to a less expensive offering.
+Which blade should you use?
+
+A. Monitor
+B. Advisor
+C. Metrics
+D. Customer insights
+
+ans: Advisor
+
+
+12) You have an Azure Active Directory (Azure AD) tenant named contoso.onmicrosoft.com.
+The User administrator role is assigned to a user named Admin1.
+An external partner has a Microsoft account that uses the user1@outlook.com sign in.
+Admin1 attempts to invite the external partner to sign in to the Azure AD tenant and receives the following error message: `Unable to invite user user1@outlook.com `" Generic authorization exception.`
+You need to ensure that Admin1 can invite the external partner to sign in to the Azure AD tenant.
+What should you do?
+
+	A. From the Users settings blade, modify the External collaboration settings.
+	B. From the Custom domain names blade, add a custom domain.
+	C. From the Organizational relationships blade, add an identity provider.
+	D. From the Roles and administrators blade, assign the Security administrator role to Admin1
+
+ans: From the Users settings blade, modify the External collaboration settings
+
+13) You have an Azure subscription linked to an Azure Active Directory tenant. The tenant includes a user account named User1.
+You need to ensure that User1 can assign a policy to the tenant root management group.
+What should you do?
+
+	A. Assign the Owner role for the Azure Subscription to User1, and then modify the default conditional access policies.
+	B. Assign the Owner role for the Azure subscription to User1, and then instruct User1 to configure access management for Azure resources.
+	C. Assign the Global administrator role to User1, and then instruct User1 to configure access management for Azure resources.
+	D. Create a new management group and delegate User1 as the owner of the new management group.
+
+ans: Assign the Owner role for the Azure subscription to User1, and then instruct User1 to configure access management for Azure resources.
+ 

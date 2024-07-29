@@ -1,0 +1,197 @@
+1) Your company has two on-premises servers named SRV01 and SRV02. Developers have created an application that runs on SRV01. The application calls a service on SRV02 by IP address.
+You plan to migrate the application on Azure virtual machines (VMs). You have configured two VMs on a single subnet in an Azure virtual network.
+You need to configure the two VMs with static internal IP addresses.
+What should you do?
+
+	A. Run the New-AzureRMVMConfig PowerShell cmdlet.
+	B. Run the Set-AzureSubnet PowerShell cmdlet.
+	C. Modify the VM properties in the Azure Management Portal.
+	D. Modify the IP properties in Windows Network and Sharing Center.
+	E. Run the Set-AzureStaticVNetIP PowerShell cmdlet.
+
+
+ans: Run the Set-AzureStaticVNetIP PowerShell cmdlet
+
+
+2) Your company has an Azure Active Directory (Azure AD) subscription.
+You need to deploy five virtual machines (VMs) to your company's virtual network subnet.
+The VMs will each have both a public and private IP address. Inbound and outbound security rules for all of these virtual machines must be identical.
+Which of the following is the least amount of network interfaces needed for this configuration?
+
+	A. 5
+	B. 10
+	C. 20
+	D. 40
+
+ans: 5
+
+
+3) Your company has an Azure Active Directory (Azure AD) subscription.
+You need to deploy five virtual machines (VMs) to your company's virtual network subnet.
+The VMs will each have both a public and private IP address. Inbound and outbound security rules for all of these virtual machines must be identical.
+Which of the following is the least amount of security groups needed for this configuration?
+
+	A. 4
+	B. 3
+	C. 2
+	D. 1
+
+ans: 1
+
+
+4) Your company's Azure subscription includes Azure virtual machines (VMs) that run Windows Server 2016.
+One of the VMs is backed up every day using Azure Backup Instant Restore.
+When the VM becomes infected with data encrypting ransomware, you decide to recover the VM's files.
+Which of the following is TRUE in this scenario?
+
+	A. You can only recover the files to the infected VM.
+	B. You can recover the files to any VM within the company's subscription.
+	C. You can only recover the files to a new VM.
+	. You will not be able to recover the files.
+
+ans: You can only recover the files to the infected VM
+
+
+5) Your company's Azure subscription includes Azure virtual machines (VMs) that run Windows Server 2016.
+One of the VMs is backed up every day using Azure Backup Instant Restore.
+When the VM becomes infected with data encrypting ransomware, you are required to restore the VM.
+Which of the following actions should you take?
+
+	A. You should restore the VM after deleting the infected VM.
+	B. You should restore the VM to any VM within the company's subscription.
+	C. You should restore the VM to a new Azure VM.
+	D. You should restore the VM to an on-premise Windows device.
+
+ans: You should restore the VM to any VM within the company's subscription
+
+6) You administer a solution in Azure that is currently having performance issues.
+You need to find the cause of the performance issues pertaining to metrics on the Azure infrastructure.
+Which of the following is the tool you should use?
+
+	A. Azure Traffic Analytics
+	B. Azure Monitor
+	C. Azure Activity Log
+	D. Azure Advisor
+
+
+ans:  Azure Monitor
+
+
+7) Your company has an Azure subscription that includes a Recovery Services vault.
+You want to use Azure Backup to schedule a backup of your company's virtual machines (VMs) to the Recovery Services vault.
+Which of the following VMs can you back up? Choose all that apply.
+
+	A. VMs that run Windows 10.
+	B. VMs that run Windows Server 2012 or higher.
+	C. VMs that have NOT been shut down.
+	D. VMs that run Debian 8.2+.
+	E. VMs that have been shut down.
+
+ans: all of the above
+
+
+8) You have an Azure Active Directory (Azure AD) tenant named contoso.com.
+You have a CSV file that contains the names and email addresses of 500 external users.
+You need to create a guest user account in contoso.com for each of the 500 external users.
+Solution: You create a PowerShell script that runs the New-AzureADUser cmdlet for each user.
+Does this meet the goal?
+
+	A. Yes
+	B. No
+
+ans: No
+
+9) You have an Azure Active Directory (Azure AD) tenant named contoso.com.
+You have a CSV file that contains the names and email addresses of 500 external users.
+You need to create a guest user account in contoso.com for each of the 500 external users.
+Solution: From Azure AD in the Azure portal, you use the Bulk create user operation.
+Does this meet the goal?
+
+	A. Yes
+	B. No
+
+ans: No
+
+
+10) You have an Azure Active Directory (Azure AD) tenant named contoso.com.
+You have a CSV file that contains the names and email addresses of 500 external users.
+You need to create a guest user account in contoso.com for each of the 500 external users.
+Solution: You create a PowerShell script that runs the New-AzureADMSInvitation cmdlet for each external user.
+Does this meet the goal?
+
+	A. Yes
+	B. No
+
+ans: Yes
+
+11) You have an Azure subscription named Subscription1 that contains a resource group named RG1.
+In RG1, you create an internal load balancer named LB1 and a public load balancer named LB2.
+You need to ensure that an administrator named Admin1 can manage LB1 and LB2. The solution must follow the principle of least privilege.
+Which role should you assign to Admin1 for each task? To answer, select the appropriate options in the answer area.
+
+ans: 
+
+To add a backend pool to LB1: Network contributor on LB1
+
+
+To add a health probe to LB2: Network contributor on LB2
+
+
+
+12) You have an Azure subscription that contains an Azure Active Directory (Azure AD) tenant named contoso.com and an Azure Kubernetes Service (AKS) cluster named AKS1.
+An administrator reports that she is unable to grant access to AKS1 to the users in contoso.com.
+You need to ensure that access to AKS1 can be granted to the contoso.com users.
+What should you do first?
+
+	A. From contoso.com, modify the Organization relationships settings.
+	B. From contoso.com, create an OAuth 2.0 authorization endpoint.
+	C. Recreate AKS1.
+	D. From AKS1, create a namespace.
+
+ans: From contoso.com, create an OAuth 2.0 authorization endpoint
+
+13) ou have a Microsoft 365 tenant and an Azure Active Directory (Azure AD) tenant named contoso.com.
+You plan to grant three users named User1, User2, and User3 access to a temporary Microsoft SharePoint document library named Library1.
+You need to create groups for the users. The solution must ensure that the groups are deleted automatically after 180 days.
+Which two groups should you create? Each correct answer presents a complete solution.
+NOTE: Each correct selection is worth one point.
+
+	A. a Microsoft 365 group that uses the Assigned membership type
+	B. a Security group that uses the Assigned membership type
+	C. a Microsoft 365 group that uses the Dynamic User membership type
+	D. a Security group that uses the Dynamic User membership type
+	E. a Security group that uses the Dynamic Device membership type
+
+ans: (a) a Microsoft 365 group that uses the Assigned membership type
+
+	(b)  Microsoft 365 group that uses the Dynamic User membership type
+
+
+
+14) You recently created a new Azure subscription that contains a user named Admin1.
+Admin1 attempts to deploy an Azure Marketplace resource by using an Azure Resource Manager template. Admin1 deploys the template by using Azure
+PowerShell and receives the following error message: `User failed validation to purchase resources. Error message: `Legal terms have not been accepted for this item on this subscription. To accept legal terms, please go to the Azure portal (http://go.microsoft.com/fwlink/?LinkId=534873) and configure programmatic deployment for the Marketplace item or create it there for the first time.`
+You need to ensure that Admin1 can deploy the Marketplace resource successfully.
+What should you do?
+
+	A. From Azure PowerShell, run the Set-AzApiManagementSubscription cmdlet
+	B. From the Azure portal, register the Microsoft.Marketplace resource provider
+	C. From Azure PowerShell, run the Set-AzMarketplaceTerms cmdlet
+	D. From the Azure portal, assign the Billing administrator role to Admin1
+
+ans: From Azure PowerShell, run the Set-AzMarketplaceTerms cmdlet
+
+
+15) You have an Azure Active Directory (Azure AD) tenant that contains 5,000 user accounts.
+You create a new user account named AdminUser1.
+You need to assign the User administrator administrative role to AdminUser1.
+What should you do from the user account properties?
+
+	A. From the Licenses blade, assign a new license
+	B. From the Directory role blade, modify the directory role
+	C. From the Groups blade, invite the user account to a new group
+
+
+ans: From the Directory role blade, modify the directory role
+
+
