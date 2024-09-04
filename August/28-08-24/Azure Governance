@@ -1,0 +1,37 @@
+Azure Governance:
+
+It is critical for maintaining control over large-scale deployments in Azure, ensuring that resources are used responsibly, securely, and in compliance with organizational standards and policies.
+
+
+Azure Governance refers to the set of processes, tools, and guidelines that help organizations manage and control their Azure resources effectively and securely. It ensures that the organization's resources are compliant with regulatory requirements, optimized for cost and performance, and aligned with business goals.
+
+
+Key components of Azure Governance include:
+
+Azure Policy: 
+
+	Allows you to create, assign, and manage policies that enforce rules and effects over your resources. It ensures that your resources stay compliant with your corporate standards.
+
+Azure Blueprints: 
+
+	Enables you to define a repeatable set of Azure resources that implement and adhere to an organization's standards, patterns, and requirements. Azure Blueprints makes it easy to deploy and manage these resources in a consistent and compliant manner.
+
+Role-Based Access Control (RBAC): 
+
+	Provides fine-grained access management for Azure resources, ensuring that only authorized users can perform specific actions on resources.
+
+Cost Management and Billing: 
+
+	Tools that help you monitor and manage your spending on Azure, ensuring you stay within budget and optimize costs.
+
+Resource Graph: 
+
+	A service that allows you to explore and query your Azure resources at scale, helping you understand the state of your environment.
+
+Management Groups: 
+
+	Helps you manage access, policies, and compliance for multiple Azure subscriptions in a hierarchical structure.
+
+Security Center: 
+
+	Provides advanced threat protection across your hybrid workloads in the cloud and on-premises, ensuring your Azure environment is secure.
