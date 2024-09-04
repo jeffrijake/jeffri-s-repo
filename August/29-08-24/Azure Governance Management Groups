@@ -1,0 +1,38 @@
+Azure Governance Management Groups:
+
+
+Management Groups are essential for organizations with large Azure environments, providing a scalable way to manage governance and compliance across multiple subscriptions.
+
+
+Azure Governance Management Groups are a feature within Microsoft Azure that allows you to organize your resources and enforce policies across your Azure environment at a large scale. 
+
+
+Here's an overview of how they work:
+
+1. Hierarchical Structure:
+
+	Management Groups sit at the top of the Azure resource hierarchy, above subscriptions.
+	You can create a hierarchy of management groups to reflect your organizational structure, such as departments, teams, or business units.
+
+2. Policy Enforcement:
+
+	Management Groups allow you to apply Azure Policies, Azure Blueprints, and role-based access control (RBAC) across multiple subscriptions.
+	By applying policies at the management group level, you can enforce compliance and governance standards consistently across your organization.
+
+3. Inheritance:
+
+	Resources within a subscription inherit the policies and RBAC assignments applied at the management group level.
+	This inheritance simplifies governance by ensuring that all child resources follow the policies of their parent management group.
+
+4. Centralized Management:
+	
+	With management groups, you can manage governance at scale, ensuring that your entire Azure environment adheres to corporate policies, security standards, and best practices.
+	This centralized control helps reduce risks and ensures that resources are deployed and managed in a consistent manner.
+
+5. Use Cases:
+
+	Enterprise-Wide Compliance: Ensure that all resources comply with legal, regulatory, and corporate standards.
+
+Resource Organization: Group subscriptions that belong to different departments or projects, applying specific policies relevant to those areas.
+
+Cost Management: Apply cost management policies and budgets across different management groups to control spending.
