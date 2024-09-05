@@ -1,0 +1,81 @@
+Azure landing zones and design areas:
+
+
+Azure Landing Zones are pre-configured environments that provide a foundation for deploying applications, workloads, and services in Microsoft Azure. They incorporate Azure best practices for governance, security, networking, identity, and compliance. Landing zones ensure that an organization's cloud environment is set up in a way that aligns with its business and operational requirements while maintaining scalability, security, and operational efficiency.
+
+Azure landing zones are part of Microsoft's Cloud Adoption Framework (CAF), which helps organizations build a secure and scalable Azure environment.
+
+Key Aspects of Azure Landing Zones:
+
+1.Scalability:
+ 
+	Designed to handle small to large-scale Azure environments.
+
+2.Security and Governance: 
+
+	Incorporates Azure best practices for access control, resource management, and regulatory compliance.
+
+3.Networking:
+ 
+	Pre-configured virtual networks, firewalls, and security groups.
+
+4.Identity and Access Management (IAM): 
+
+	Centralized IAM setup using Azure Active Directory for consistent control across resources.
+
+5.Resource Organization: 
+	Proper grouping of resources for easier management, typically through Azure subscriptions, management groups, and resource groups.
+
+
+
+Design Areas of Azure Landing Zones:
+
+	When creating landing zones, organizations must consider several design areas, which include:
+
+A) Enterprise-scale architecture:
+
+1.Identity and Access Management: 
+
+	Design policies for authentication, authorization, role-based access control (RBAC), and identity management.
+
+
+2.Networking Topology and Connectivity: 
+
+	Choose appropriate network models (hub-and-spoke, mesh, etc.), configure virtual networks, hybrid networking (VPN/ExpressRoute), and ensure connectivity between on-premises and Azure resources.
+
+3.Security, Governance, and Compliance: 
+
+	Implement policies to meet security, governance, and compliance needs. This includes monitoring, encryption, and threat protection.
+
+4.Monitoring and Management: 
+
+	Set up monitoring (Azure Monitor, Log Analytics), alerting, and backup solutions for workloads and services.
+
+
+5.Cost Management: 
+	
+	Ensure efficient resource usage and cost control by managing budgets, Azure reservations, and optimizing resource consumption.
+
+
+6.Application Architecture and DevOps: 	
+	
+	Set up CI/CD pipelines, DevOps practices, and application hosting environments that support microservices, containers, and serverless computing.
+
+7.Business Continuity and Disaster Recovery (BCDR): 
+
+	Plan for disaster recovery (DR) by using Azure Site Recovery, backup, and other solutions to ensure availability.
+
+
+B) Scale Unit Design Areas (focus on technical foundation):
+
+1.Management Group Hierarchy: 
+
+	Structuring subscriptions and management groups for effective governance.
+
+2.Subscription Organization: 
+
+	Setting up subscriptions based on workloads, departments, or environments (production, development, etc.).
+
+3.Resource Consistency: 
+
+	Consistent tagging and resource naming conventions across Azure resources.
