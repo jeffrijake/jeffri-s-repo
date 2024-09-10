@@ -1,0 +1,44 @@
+How Resources communicate on VNets:
+
+In a Virtual Network (VNet), resources like Virtual Machines (VMs), Azure App Services, and other Azure services communicate over a secure, isolated network. Here's how resource communication happens within VNets:
+
+1.Intra-VNet Communication (within the same VNet):
+
+Resources in the same VNet can communicate directly with each other without any need for public internet connectivity.
+By default, all resources within a VNet can communicate freely using private IP addresses.
+The internal Azure network handles this communication, ensuring it's secure and efficient.
+
+
+2.Subnets:
+
+VNets can be subdivided into multiple subnets, and resources within different subnets of the same VNet can still communicate with each other. Routing between subnets happens automatically, without any manual configuration.
+You can control traffic between subnets using Network Security Groups (NSGs) to allow or deny specific traffic based on IP address, port, or protocol.
+
+3.Cross-VNet Communication (Peering):
+
+Resources in different VNets can communicate via VNet Peering.
+VNet Peering allows the peered VNets to share resources and communicate as if they were part of the same network. Traffic between peered VNets stays within the Azure network and does not pass through the public internet.
+Peering can be done within the same region (intra-region) or across different regions (global VNet Peering).
+
+4.Azure VNet Gateway and VPN:
+
+Resources in a VNet can connect to on-premises networks using Azure VPN Gateway.
+The VPN gateway allows for secure communication between Azure and on-premises networks over IPsec/IKE.
+
+5.Virtual Network Interface Cards (NICs):
+
+Each resource (such as a VM) in a VNet has a Network Interface Card (NIC) attached.
+The NIC is assigned a private IP address, and resources communicate over the private network using these IPs.
+
+6.DNS and Name Resolution:
+
+Azure VNets provide internal DNS resolution, allowing resources to communicate with each other using hostnames.
+You can use Azure-provided DNS, or configure a custom DNS server to handle name resolution within the VNet.
+
+7.VNet-to-VNet Communication:
+
+VNets in different Azure regions can communicate with each other using VNet-to-VNet VPNs, enabling hybrid cloud or multi-region deployments.
+
+8.VNet Integration with Azure Services:
+
+Some Azure services, like Azure App Services or Azure SQL Database, can be integrated with VNets to enable secure communication without exposing the services to the public internet.

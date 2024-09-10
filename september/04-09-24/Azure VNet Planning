@@ -1,0 +1,63 @@
+VNet Planning:
+
+
+It is is crucial to ensuring scalability, security, and smooth communication between Azure and on-premises environments.
+
+
+	Azure Virtual Network (VNet) planning involves designing and configuring a secure, isolated environment in Microsoft Azure where resources like virtual machines, databases, and services can communicate with each other. Proper planning ensures optimal performance, security, and scalability of applications within the VNet. 
+
+Here are the key aspects of Azure VNet planning:
+
+1. Address Space and Subnet Design
+
+	CIDR Block: Decide on the address space using a CIDR block (e.g., 10.0.0.0/16). Choose an IP range that doesn’t overlap with any on-premises networks to avoid conflicts in hybrid scenarios.
+
+	Subnets: Plan for different subnets to segregate various application tiers (e.g., frontend, backend, databases). This also helps manage traffic more efficiently.
+
+2. Network Security
+
+	Network Security Groups (NSGs): Use NSGs to control traffic to/from your VNet by defining inbound/outbound security rules at the subnet or network interface level.
+
+	Azure Firewall or Third-party Firewall: Plan for advanced security by adding firewalls for monitoring, filtering, and logging traffic.
+
+3. Virtual Network Peering
+
+	Plan for VNet Peering if multiple VNets need to communicate within Azure regions. Peering is low-latency, but address spaces of peered VNets must not overlap.
+	Consider Global VNet Peering if VNets in different regions need to communicate.
+
+4. Connectivity Options
+
+	VPN Gateway: For hybrid scenarios, use a VPN Gateway to connect on-premises networks to Azure via IPsec or ExpressRoute for private, high-speed connections.
+
+	Azure Bastion: Plan to secure remote management of virtual machines in the VNet by using Azure Bastion, which provides secure and seamless RDP/SSH access without exposing VMs to the internet.
+
+5. Routing and Traffic Management
+ 
+	Define User-Defined Routes (UDRs) if you need custom routing between subnets or to route traffic through network appliances.
+
+	Plan for load balancers (Azure Load Balancer or Application Gateway) to distribute traffic across virtual machines or services.
+
+6. DNS Configuration
+
+	Use Azure DNS for private or public DNS resolution within your VNet, or integrate with on-premises DNS servers if needed.
+	Ensure DNS resolution works for your resources, whether they're deployed in Azure or in hybrid scenarios.
+
+7. High Availability and Disaster Recovery
+
+	Plan for availability zones or regions to ensure high availability and disaster recovery. Distribute resources across multiple zones or regions to avoid single points of failure.
+	Use Azure Traffic Manager for global DNS load balancing and failover between regions.
+
+8. Monitoring and Logging
+
+	Set up Network Watcher for monitoring VNet traffic, troubleshooting network issues, and visualizing network topology.
+	Enable Azure Monitor and Azure Security Center for comprehensive security and performance monitoring.
+
+9. Scaling and Performance
+
+	Plan subnets and VNets with scalability in mind, allowing for future growth in IP address needs.
+	Make sure VNets are sized to accommodate performance requirements for high throughput workloads and application growth.
+
+10. Compliance and Governance
+
+	Ensure your VNet configuration complies with organizational policies and any industry-specific regulations, like GDPR or HIPAA.
+	Use Azure Policy to enforce compliance rules across your VNet deployments.
