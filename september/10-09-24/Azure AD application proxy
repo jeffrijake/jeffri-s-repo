@@ -1,0 +1,67 @@
+Azure AD application proxy
+
+
+
+It is a feature of Azure Active Directory (Azure AD) that enables secure remote access to on-premises web applications. It allows users to access internal applications, like SharePoint, intranet sites, or custom web applications, from anywhere using Azure AD authentication, without the need for a VPN or direct access to the corporate network.
+
+Key Features of Azure AD Application Proxy:
+
+Secure Remote Access:
+
+Provides secure, remote access to on-premises web applications by acting as a reverse proxy.
+Users can access internal apps from any device or location using Azure AD credentials, with no need to expose internal networks directly to the internet.
+
+Azure AD Integration:
+
+Supports Single Sign-On (SSO) for seamless authentication. Users log in once using their Azure AD credentials and gain access to both cloud and on-premises applications.
+Integrates with Conditional Access policies, enforcing security requirements such as multifactor authentication (MFA), location-based access control, and device compliance before granting access.
+
+No VPN Required:
+
+Unlike traditional solutions like VPNs, Application Proxy eliminates the need for users to connect to the corporate network directly.
+Reduces the management overhead of maintaining VPNs while improving security by minimizing attack surface exposure.
+
+Pre-Authentication:
+
+Azure AD Application Proxy provides pre-authentication through Azure AD, ensuring that only authenticated and authorized users can access internal applications.
+It supports additional security measures such as MFA and passwordless authentication methods.
+
+Application Connectors:
+
+Uses lightweight connectors installed on the on-premises environment to establish a secure outbound connection to Azure.
+The connectors handle all traffic between Azure AD and on-premises applications, ensuring a secure communication path.
+
+Supports Diverse Application Types:
+
+Compatible with many types of applications, including those that use Integrated Windows Authentication (IWA) or header-based authentication.
+Can be used for custom web applications, legacy applications, and even rich-client apps that are hosted internally.
+
+Conditional Access and Security Controls:
+
+Enforce security policies like MFA, location-based access, and risk-based authentication when users attempt to access the on-premises apps through Azure AD Application Proxy.
+Use Azure AD Conditional Access to ensure that only compliant devices or users from trusted locations can access critical internal resources.
+
+Access Control and Monitoring:
+
+Provides detailed audit logs and access control insights, enabling administrators to track who accessed which applications, when, and from where.
+Helps with compliance and monitoring by providing centralized control over application access and activity.
+
+
+
+How Azure AD Application Proxy Works:
+
+User Request:
+
+The user accesses an internal web application via a public URL that is routed through Azure AD.
+
+Pre-Authentication:
+
+Azure AD verifies the user's identity using pre-authentication mechanisms (e.g., username, password, MFA).
+
+Application Proxy Connector:
+
+Once authenticated, Azure AD forwards the request to the Application Proxy Connector, which resides on the on-premises network. The connector establishes a secure connection between Azure and the internal app.
+
+Application Response:
+
+The proxy connector forwards the user's request to the application server on-premises and sends the response back to the user via the secure channel.
