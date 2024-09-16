@@ -1,0 +1,139 @@
+Different data stores overview in azure
+
+
+
+Azure offers a wide range of data storage solutions tailored for different types of data, workloads, and use cases. 
+
+Here’s an overview of the key Azure data storage options:
+
+1. Azure Blob Storage
+Type: Object storage
+Use Case: Storing unstructured data like images, videos, audio, documents, backups, and logs.
+Features:
+Scalable and cost-effective.
+Supports hot, cool, and archive tiers for managing data lifecycle.
+Integration with Azure CDN, machine learning, and analytics services.
+
+
+2. Azure File Storage
+Type: Managed file share
+Use Case: For file shares across multiple virtual machines (VMs), providing SMB (Server Message Block) or NFS (Network File System) protocol support.
+Features:
+Fully managed and supports mounting across VMs and on-premises.
+Integration with Active Directory.
+File sync to keep on-premises and cloud data consistent.
+
+
+3. Azure Table Storage
+Type: NoSQL key-value store
+Use Case: Storing large-scale, structured, and non-relational data.
+Features:
+Highly scalable.
+Ideal for quick lookups with simple key-value access.
+Cost-effective for scenarios where full SQL features are unnecessary.
+
+
+4. Azure Queue Storage
+Type: Message queuing
+Use Case: Building scalable distributed systems by decoupling components through message passing.
+Features:
+Highly available and durable messaging.
+Can handle millions of messages.
+Often used for asynchronous message processing in cloud applications.
+
+5. Azure Disk Storage
+Type: Block storage
+Use Case: Persistent storage for Azure VMs, offering different performance tiers (Standard HDD, Standard SSD, Premium SSD, and Ultra SSD).
+Features:
+Provides high performance for mission-critical applications.
+Managed disks offer easy scaling and redundancy.
+Supports snapshots and backups.
+
+6. Azure SQL Database
+Type: Relational database (PaaS)
+Use Case: For applications that need relational data, requiring ACID compliance, strong consistency, and SQL-based queries.
+Features:
+Fully managed database with automated backups, scaling, and high availability.
+Supports built-in intelligence for performance tuning.
+Compatible with SQL Server on-premises.
+
+7. Azure Cosmos DB
+Type: Globally distributed NoSQL database
+Use Case: Low-latency, high-throughput applications needing multiple consistency models and global distribution.
+Features:
+Multi-model support (document, key-value, graph, and columnar stores).
+SLA-backed performance guarantees for latency, availability, and throughput.
+Tunable consistency levels (from strong to eventual consistency).
+
+8. Azure Data Lake Storage Gen2
+Type: Hierarchical data storage
+Use Case: Big data analytics workloads, such as running Hadoop, Spark, or other large-scale data processing.
+Features:
+Combines capabilities of Azure Blob Storage and Azure Data Lake.
+Provides low-cost, highly scalable storage for large datasets.
+Integration with Azure Synapse Analytics and HDInsight.
+
+9. Azure Managed Disks
+Type: Managed block storage
+Use Case: Provides persistent storage for Azure Virtual Machines, used for storing OS disks, data disks, and backup snapshots.
+Features:
+Easy scalability and configuration.
+High availability with redundancy.
+Supports snapshots and managed backup.
+
+10. Azure Database for MySQL/PostgreSQL/MariaDB
+Type: Relational databases (PaaS)
+Use Case: Applications requiring open-source relational databases (MySQL, PostgreSQL, or MariaDB).
+Features:
+Managed services with automated backups, scaling, and updates.
+High availability and built-in security.
+Supports advanced querying, stored procedures, and more.
+
+11. Azure Cache for Redis
+Type: In-memory data store
+Use Case: Improving performance of applications by caching frequently accessed data, such as sessions or query results.
+Features:
+Fast, low-latency access to data.
+Fully managed service with replication and persistence.
+Seamless integration with Azure applications for caching needs.
+
+12. Azure SQL Managed Instance
+Type: Managed relational database (PaaS)
+Use Case: Fully managed SQL Server instances with near 100% compatibility with on-premises SQL Server.
+Features:
+Ideal for migrating on-premises SQL Server workloads.
+Automated backups, updates, and scaling.
+High availability and security features.
+
+13. Azure Synapse Analytics
+Type: Data warehouse
+Use Case: For complex analytics queries, integrating big data and data warehousing workloads.
+Features:
+Unified experience for querying both structured and unstructured data.
+Highly scalable for analytics workloads.
+Deep integration with Azure Machine Learning and Power BI.
+
+14. Azure Backup
+Type: Data backup
+Use Case: Automated backup solution for VMs, SQL databases, file shares, and other workloads.
+Features:
+Centralized backup management.
+Data encryption, redundancy, and recovery options.
+Supports hybrid backups (cloud and on-premises).
+
+15. Azure Blob Storage Archive
+Type: Cold storage for infrequently accessed data
+Use Case: Archiving large datasets, backups, and regulatory data with infrequent access requirements.
+
+Features:
+Low-cost storage with SLA-backed durability.
+Data retrieval times can range from hours to days.
+Useful for long-term retention of critical data.
+Choosing the Right Data Store in Azure:
+For unstructured data: Azure Blob Storage and Data Lake.
+For structured data: Azure SQL Database, Cosmos DB, MySQL/PostgreSQL.
+For caching: Azure Cache for Redis.
+For distributed applications: Azure Queue Storage, Table Storage.
+For data analytics: Azure Synapse Analytics, Data Lake Storage Gen2.
+For backups and archiving: Azure Backup, Blob Archive Storage.
+Each store serves a unique purpose, and the choice depends on factors like data type, access patterns, scalability, and cost considerations.
