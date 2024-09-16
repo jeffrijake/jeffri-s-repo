@@ -1,0 +1,38 @@
+Azure Blob Storage tiering
+
+
+Azure Blob Storage offers three primary access tiers for storing data: Hot, Cool, and Archive. These tiers help optimize storage costs by allowing you to select the appropriate level based on how frequently the data will be accessed. 
+
+Here's a breakdown:
+
+1. Hot Tier
+Best for: Data that is accessed frequently.
+Cost: Higher storage costs, but lower access costs.
+Use cases: Frequently accessed data, like website content, streaming media, or data used in active applications.
+
+2. Cool Tier
+Best for: Data that is infrequently accessed and stored for at least 30 days.
+Cost: Lower storage costs compared to the Hot tier but higher access costs.
+Use cases: Backup data, data for disaster recovery, or long-term storage that is rarely accessed.
+
+3. Archive Tier
+Best for: Data that is rarely accessed and stored for a long period.
+Cost: Lowest storage costs, but the highest costs for access and data retrieval. Retrieval times can take several hours.
+Use cases: Long-term archival data, compliance data, and data you may need to access only rarely, such as historical records.
+
+
+How Tiering Works:
+
+1) You can set the tier for a blob (individual file) or a blob container.
+2) Automatic tiering: Azure does not automatically move data between tiers. 3) You need to manually adjust the tier based on changing needs or use 4) 4) lifecycle management policies to automate this process.
+
+5) Changing tiers: You can change the access tier of a blob as needed, which will affect your costs accordingly.
+
+Pricing Considerations:
+
+1) Hot Tier: High storage cost, low access cost.
+
+2) Cool Tier: Low storage cost, high access cost, minimum 30-day retention requirement.
+
+3) Archive Tier: Very low storage cost, very high access and retrieval cost, retrieval delay, minimum 180-day retention requirement.
+By leveraging these tiers effectively, you can optimize costs for storing large amounts of data in Azure.
