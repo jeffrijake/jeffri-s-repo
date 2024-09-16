@@ -1,0 +1,43 @@
+Azure Premium Storage Accounts
+
+Azure Premium Storage Accounts are optimized for high-performance storage workloads, providing low-latency and high-throughput disk storage for Azure virtual machines (VMs). Here’s an overview:
+
+Types of Azure Premium Storage:
+
+Premium SSD Managed Disks (P30, P40, etc.):
+
+High-performance, low-latency SSD-backed storage designed for I/O-intensive applications.
+Suitable for large databases, OLTP (Online Transaction Processing) systems, or other mission-critical workloads.
+
+Premium SSD v2 Disks:
+
+Next-gen premium SSD, offering better flexibility, performance, and cost control for workloads requiring higher performance.
+Premium Page Blobs (Premium Storage Accounts):
+
+Suitable for Azure VMs to support high-performance workloads.
+Ideal for SQL Server, NoSQL databases, and big data analytics workloads.
+
+Ultra Disks:
+
+Extremely low-latency, high-throughput disks ideal for mission-critical workloads such as SAP HANA, top-tier databases, and advanced big data analytics.
+
+Key Benefits:
+
+Low Latency: Provides sub-millisecond latency, ideal for workloads requiring fast response times.
+
+High Throughput: Supports high IOPS and throughput requirements.
+Consistency: Provides consistent high performance across reads and writes.
+
+Scalability: Allows you to scale performance based on storage size.
+
+Use Cases:
+
+Large databases like Microsoft SQL Server or Oracle.
+
+SAP applications.
+
+High-performance, data-intensive applications.
+
+Limitations:
+Higher cost compared to Standard storage accounts.
+Only supports certain VM types and configurations optimized for premium storage.
