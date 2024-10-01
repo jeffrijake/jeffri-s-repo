@@ -1,0 +1,65 @@
+Azure SQL Database - Pricing options
+
+Azure SQL Database offers several pricing options depending on your needs for performance, flexibility, and management. Here’s an overview of the main pricing tiers:
+
+1. DTU-based (Database Transaction Unit) Model
+This older model is based on a bundled measure of compute, storage, and IO. You can choose from different tiers, each with a specific DTU allocation.
+
+Basic: Suitable for small databases with a single workload.
+
+Maximum database size: 2 GB
+Suitable for light workloads (e.g., basic apps or small websites)
+Standard: Provides moderate performance.
+
+DTU options: 10–300 DTUs
+
+Maximum database size: Up to 1 TB
+
+Suitable for general-purpose applications
+Premium: Provides high performance and is designed for mission-critical applications.
+DTU options: 125–4000 DTUs
+Maximum database size: Up to 4 TB
+
+
+2. vCore-based (Virtual Core) Model
+
+The vCore model allows you to choose CPU, memory, and storage independently. It provides more flexibility compared to the DTU model.
+
+General Purpose: Balanced for most workloads, offering scalable compute and storage.
+Compute: Up to 80 vCores
+
+Storage: Up to 16 TB
+
+Suitable for general business applications
+
+Business Critical: High-performance and designed for mission-critical workloads.
+
+Compute: Up to 80 vCores
+
+Storage: Up to 4 TB
+Offers built-in HA with multiple replicas
+
+Hyperscale: Scalable storage and compute designed for very large databases.
+
+Compute: Up to 80 vCores
+
+Storage: Virtually unlimited (up to 100 TB)
+
+
+3. Serverless
+Automatically pauses during inactivity and scales up/down based on usage.
+Pay only for the compute resources you use.
+Ideal for intermittent workloads.
+
+
+4. Elastic Pool
+Shared resources across multiple databases within a pool.
+Allows cost savings by optimizing resource utilization when databases have varying resource usage.
+
+Key Factors Affecting Pricing
+
+Storage: Pay for storage based on the amount used (in the vCore model, storage is billed separately).
+
+Backup: Backup storage is free up to 100% of the database size, and beyond that, there are charges for long-term backup retention.
+
+Network Egress: Data egress (data leaving Azure) may incur additional costs.
