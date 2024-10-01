@@ -1,0 +1,45 @@
+Azure SQL Database - Deployment Options
+
+
+	Azure SQL Database is a fully managed Platform as a Service (PaaS) offering from Microsoft, designed to simplify database management tasks like backups, scaling, patching, and high availability. It provides different deployment options tailored for various use cases and workloads.
+
+1. Single Database
+
+Description: This is a standalone database, fully isolated with its own dedicated resources.
+Use case: Ideal for applications that require a single database with predictable resource demands.
+Key Features:
+Each database has its own set of resources.
+Serverless compute tier (for automatic scaling and pausing when not in use).
+Elastic scalability with high availability and geo-redundancy options.
+
+
+2. Elastic Pool	
+
+Description: A collection of single databases that share a set of resources. The pool can scale elastically to meet varying performance demands across multiple databases.
+Use case: Suited for SaaS applications with multiple tenants where databases have variable and unpredictable usage patterns.
+Key Features:
+Cost-effective solution as resources are shared across multiple databases.
+Automatic resource balancing between databases in the pool.
+Elastic scalability allows resources to be dynamically distributed based on demand.
+
+
+3. Managed Instance
+
+Description: Provides near 100% compatibility with on-premises SQL Server, including support for SQL Server Agent, cross-database queries, and other enterprise features. Managed Instance allows you to lift and shift your on-premises SQL Server to Azure with minimal changes.
+Use case: Best suited for organizations looking to migrate multiple databases or entire SQL Server instances to the cloud.
+
+Key Features:
+Support for SQL Server features like CLR, Service Broker, and linked servers.
+Allows seamless migration using the Azure Database Migration Service.
+Provides network isolation with VNet integration, making it more secure for hybrid environments.
+
+
+4. Azure SQL Edge
+
+Description: A small-footprint, edge-optimized SQL engine that brings data processing capabilities to IoT (Internet of Things) devices and edge computing environments.
+Use case: Designed for edge environments where data needs to be processed locally for performance or regulatory reasons.
+
+Key Features:
+Supports real-time data processing at the edge.
+Works offline and syncs with central databases when connectivity is restored.
+Suitable for AI, machine learning, and streaming analytics at the edge.
