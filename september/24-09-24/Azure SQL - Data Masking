@@ -1,0 +1,40 @@
+Azure SQL - Data Masking
+
+
+Azure SQL Data Masking is a security feature in Azure SQL Database and Azure SQL Managed Instance that helps protect sensitive data by masking it from non-privileged users. This ensures that sensitive information (like Social Security numbers, credit card details, or email addresses) is obfuscated when viewed by certain users, while authorized users can still access the full data.
+
+Key Features of Azure SQL Data Masking:
+
+Default Masking: Predefined rules that apply common data obfuscation patterns, such as showing only the last few digits of a credit card number.
+Custom Masking: Customizable masking rules based on user needs for different data types (e.g., letters, numbers, or symbols).
+
+Multiple Masking Functions: There are several masking functions available:
+
+Default: Masks the entire value.
+
+Email: Masks email addresses, typically by displaying only the first character and the domain.
+
+Custom String: Allows a custom pattern, such as masking part of the value and showing specific characters.
+
+Random Number: Replaces numeric data with a random number within a specified range.
+
+Credit Card: Shows the last four digits and masks the rest.
+
+Benefits:
+Security: Helps ensure that sensitive data is not exposed to unauthorized users, reducing the risk of data breaches.
+
+Ease of Use: You can enable data masking on selected columns with a simple interface in the Azure portal.
+
+Minimal Performance Impact: Since the masking is applied at query time and doesn't modify the underlying data, the performance impact is minimal.
+
+Steps to Enable Data Masking:
+
+Navigate to the Azure Portal.
+
+Select your Azure SQL Database.
+
+Under Security, click Dynamic Data Masking.
+
+Select the columns you want to mask and choose a masking function.
+
+Apply the masking rules, and they will take effect immediately.
