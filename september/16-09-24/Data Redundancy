@@ -1,0 +1,37 @@
+Azure Storage Accounts - Data Redundancy
+
+
+Azure Storage Accounts offer multiple data redundancy options to ensure the durability and availability of your data. Here’s a breakdown of the redundancy types:
+
+1. Locally Redundant Storage (LRS):
+
+Replication: Data is replicated three times within a single data center.
+Use case: Best for low-cost redundancy where data does not need to survive the failure of a data center.
+Protection: Protects against hardware failures within the data center but not against data center outages.
+
+2. Zone-Redundant Storage (ZRS):
+Replication: Data is replicated three times across different availability zones in the same region.
+Use case: Suitable for scenarios requiring high availability within a region and protection from data center-level failures.
+Protection: Guards against the failure of a single availability zone.
+
+3. Geo-Redundant Storage (GRS):
+Replication: Data is replicated three times locally in the primary region and then replicated to another region (secondary region) with three additional copies.
+Use case: Ideal for disaster recovery where data needs to be available even if the entire region fails.
+Protection: Protects against regional outages.
+
+4. Geo-Zone-Redundant Storage (GZRS):
+Replication: Combines the benefits of ZRS and GRS by replicating data across availability zones in the primary region and also to a secondary region.
+Use case: Offers the highest level of protection, combining regional and zone redundancy.
+Protection: Ensures durability and availability even if an entire region or availability zone fails.
+
+5. Read-Access Geo-Redundant Storage (RA-GRS) and Read-Access Geo-Zone-Redundant Storage (RA-GZRS):
+Replication: Similar to GRS and GZRS, with the added benefit that the secondary region is read-accessible in case of an outage in the primary region.
+Use case: Best for disaster recovery scenarios where you need read access to data in the secondary region.
+
+
+Redundancy Comparison Summary:
+LRS: In-region, single data center.
+ZRS: In-region, across availability zones.
+GRS: Primary and secondary region, single data center in each region.
+GZRS: Primary region across availability zones, and secondary region replication.
+RA-GRS/RA-GZRS: Adds read access to GRS and GZRS in the secondary region.
