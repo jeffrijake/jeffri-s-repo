@@ -1,0 +1,46 @@
+Azure SQL - Transparent Data Encryption
+
+
+Transparent Data Encryption (TDE) in Azure SQL helps protect your data by encrypting the data at rest. It automatically encrypts the database, associated backups, and transaction log files without requiring application changes. Here's a summary of the key aspects:
+
+How TDE Works
+
+Encryption: TDE uses AES-256 encryption to encrypt the storage of an entire database.
+At Rest: It ensures that the data stored on the disk (at rest) is encrypted.
+
+Encryption Key: Managed by Azure (service-managed) by default, or it can be customer-managed using Azure Key Vault for more control.
+
+Key Features
+Encryption on by Default: For all new Azure SQL databases, TDE is enabled by default.
+
+Automatic Key Management: Azure manages the encryption keys automatically unless you opt for customer-managed keys (CMK).
+
+Backup Protection: All backups of the database, including full, differential, and transaction log backups, are encrypted.
+
+No Application Changes: As TDE operates at the database level, you don't need to modify your application code.
+
+Configuration Options
+Service-Managed Keys: Azure handles encryption key lifecycle management automatically.
+
+Customer-Managed Keys (CMK): You can provide and manage your own encryption keys through Azure Key Vault for greater control.
+
+Enabling/Disabling TDE
+For Azure SQL Database: TDE is enabled by default, but you can manage it through the Azure portal, PowerShell, or the Azure CLI if needed.
+
+Example PowerShell command to enable TDE:
+
+		Set-AzSqlDatabaseTransparentDataEncryption -ResourceGroupName "ResourceGroupName" `
+ 		-ServerName "ServerName" -DatabaseName "DatabaseName" `
+	    -State "Enabled"
+
+
+Disabling TDE: Can be done via the Azure portal or using commands, but it's not recommended for security reasons.
+
+
+Advantages
+
+1. Security Compliance: Meets many regulatory and compliance requirements.
+
+2. No Performance Impact: Minimal performance overhead with encryption.
+
+3.Backup Security: Encrypts backups to secure them even outside Azure.
