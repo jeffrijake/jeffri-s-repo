@@ -1,0 +1,102 @@
+Azure Cosmos DB - Resources
+
+In Azure Cosmos DB, resources represent entities that can be managed or acted upon. These resources include databases, containers, items (documents or rows), and the underlying infrastructure that manages the data. Understanding these resources and how they interact is crucial for building, deploying, and managing applications that use Cosmos DB.
+
+Key Resources in Azure Cosmos DB:
+
+Accounts
+
+A Cosmos DB account represents the global distribution of your data. You can associate multiple Azure regions with an account, which enables global distribution and replication of your data.
+All resources, such as databases and containers, are created within a Cosmos DB account.
+You can choose consistency levels, throughput, and APIs at the account level.
+
+Example:
+
+	az cosmosdb create --name <account-name> --resource-group <resource-group>
+
+
+Databases
+
+A database in Cosmos DB is a container for organizing your data. It groups multiple containers and applies common policies such as throughput (shared or dedicated).
+A database is a logical resource that groups collections of data into smaller containers for organizational purposes.
+
+Example:
+
+	az cosmosdb sql database create --account-name <account-name> --resource-group <resource-group> --name <database-name>
+
+Containers
+
+A container is where data is stored in Azure Cosmos DB. It can be a collection, table, or graph depending on the API.
+Containers scale based on throughput (measured in Request Units or RUs) and storage. Each container can have its partition key that helps distribute data across different nodes.
+A container can represent a collection of JSON documents (for SQL API), a set of graph vertices/edges (Gremlin API), or a set of rows (Cassandra API).
+
+Example:
+
+	az cosmosdb sql container create --account-name <account-name> --database-name <database-name> --resource-group <resource-group> --name <container-name>
+
+Items (Documents)
+
+An item is an individual record inside a container. It can be a JSON document (SQL API), a row (Cassandra API), or a graph node (Gremlin API).
+Items are organized based on the partition key within the container to ensure scalability and distribution across multiple nodes.
+Items are accessible via queries, and Azure Cosmos DB automatically indexes them based on the chosen API.
+Partitioning
+
+Partitioning is a critical concept in Cosmos DB to ensure high availability and scalability. Each container in Cosmos DB has a partition key, which is used to distribute data across multiple nodes (physical partitions).
+Partitioning ensures that the database can scale horizontally across multiple Azure regions or datacenters.
+Request Units (RUs)
+
+Request Units (RUs) represent the throughput model of Cosmos DB. Every operation (read, write, query) in Cosmos DB consumes RUs.
+You can provision RUs for a container or a database and scale them dynamically as your application needs change.
+RUs provide a predictable way to measure and control costs by defining how much throughput is available to your applications.
+Stored Procedures, User-Defined Functions, and Triggers
+
+Stored Procedures: These are server-side scripts that allow for transactional logic within Cosmos DB containers. They are written in JavaScript.
+
+User-Defined Functions (UDFs): UDFs allow you to create custom query expressions that can be invoked during data retrieval.
+
+Triggers: Triggers can be either pre-triggers (executed before a data operation) or post-triggers (executed after a data operation) to perform custom logic.
+
+Resource Structure in Cosmos DB (SQL API):
+
+Account: Represents the top-level resource.
+
+Database: Organizes containers.
+
+Container (Collection): Holds items (documents).
+
+Item (Document): The actual data record.
+Stored Procedures, UDFs, Triggers: Optional business logic and custom functions.
+
+Managing Cosmos DB Resources:
+
+Provisioning Throughput (RUs)
+
+When creating a container, you can set a dedicated throughput (RUs) for it. You can also set throughput at the database level, and all containers within that database will share the throughput.
+Example:
+
+	az cosmosdb sql container create --account-name <account-name> --database-name <database-name> --name <container-name> --throughput 400
+
+Creating Global Distribution
+
+You can add or remove Azure regions to your Cosmos DB account to enable global distribution. This is useful for applications that require low-latency access to data from different parts of the world.
+Example:
+
+	az cosmosdb update --name <account-name> --resource-group <resource-group> --locations "West US" "East US"
+
+Querying Data
+
+Azure Cosmos DB allows querying data using SQL-like syntax (SQL API). The queries retrieve documents based on filter conditions and support advanced operations like joins and aggregations.
+Example Query:
+
+SELECT * FROM c WHERE c.age > 25
+Security and Access Control
+
+Cosmos DB provides built-in encryption for data at rest, role-based access control (RBAC), and integration with Azure Active Directory (Azure AD) to enforce secure access to resources.
+You can configure IP-based access control and virtual network service endpoints for additional network security.
+
+Monitoring and Management Tools:
+
+Azure Portal: Provides a graphical interface to create, manage, and monitor Cosmos DB resources.
+Azure CLI and PowerShell: Command-line tools to manage Cosmos DB accounts, databases, containers, and more.
+
+Azure SDKs: Programmatic access using Cosmos DB SDKs for .NET, Node.js, Python, and Java.
