@@ -1,0 +1,55 @@
+Azure Databricks - Let's create a workspace
+
+
+To create a workspace in Azure Databricks, follow these steps:
+
+Step 1: Sign in to the Azure Portal
+Open the Azure portal and log in with your Azure credentials.
+
+Step 2: Create a Databricks Workspace
+In the search bar at the top of the Azure portal, type "Azure Databricks" and select the Azure Databricks service from the search results.
+
+In the Azure Databricks page, click Create.
+
+Fill in the necessary information:
+
+Subscription: Choose your Azure subscription.
+
+Resource group: Select an existing resource group or create a new one (a 
+
+logical container for managing resources).
+
+Workspace name: Enter a unique name for your Databricks workspace.
+
+Region: Choose the Azure region closest to your location for optimal 
+performance.
+
+Pricing tier: Choose a pricing tier (typically, the Standard or Premium tier).
+
+After configuring the options, click Review + create.
+
+Review the configuration and click Create to deploy the workspace. The deployment might take a few minutes.
+
+Step 3: Access the Databricks Workspace
+Once the deployment is complete, go to the Resource page by clicking on Go to resource.
+
+In the workspace overview, click Launch Workspace to open the Databricks environment in a new tab.
+
+Step 4: Set Up the Databricks Workspace
+In the Databricks environment, you can now start creating clusters, notebooks, and connecting to data sources.
+
+Create a Cluster:
+
+Click on Clusters in the sidebar and select Create Cluster.
+Specify the cluster configuration, such as cluster name, worker type, autoscaling options, and version of Apache Spark.
+Click Create Cluster to launch it.
+
+Create a Notebook:
+
+Once the cluster is up and running, click on Workspace in the sidebar, then select Create → Notebook.
+Name your notebook and choose a language such as Python, Scala, SQL, or R.
+Select the cluster on which you want to run your notebook and click Create.
+
+Run a Simple Query:
+
+In the notebook, you can now write code to run queries or perform data transformations using Apache Spark.
