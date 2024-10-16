@@ -1,0 +1,67 @@
+Azure Cosmos DB is a fully managed, globally distributed, NoSQL database service provided by Microsoft Azure. It is designed to provide high availability, low latency, and elastic scalability across multiple regions, making it ideal for modern cloud-native applications. Cosmos DB supports multiple data models, including document, key-value, graph, and column-family, and it offers multiple APIs, such as SQL, MongoDB, Gremlin, Cassandra, and Table API.
+
+Key Features of Azure Cosmos DB:
+
+Global Distribution:
+
+Cosmos DB allows you to distribute data globally by replicating it across multiple Azure regions. This enables low-latency access for users across the globe.
+It offers automatic and transparent replication to the desired regions.
+It provides multi-region writes and conflict resolution to ensure data consistency.
+
+Elastic Scalability:
+
+Cosmos DB automatically scales throughput and storage as needed.
+You can set the database to autoscale mode, allowing it to handle varying workloads without manual intervention.
+Throughput is provisioned based on Request Units (RUs), which is a measure of the system’s resource consumption.
+
+Multiple Consistency Models:
+
+Cosmos DB offers five well-defined consistency levels:
+Strong: Guarantees linearizability.
+Bounded Staleness: Guarantees consistency with a lag defined by a time interval or number of versions.
+Session: Guarantees consistency for a session, making it a good choice for scenarios like user-specific data.
+Consistent Prefix: Guarantees that reads never see out-of-order writes.
+Eventual: Guarantees that, eventually, all replicas converge.
+
+Low Latency:
+
+Azure Cosmos DB is designed to provide single-digit millisecond latency for both reads and writes, regardless of the scale or location.
+It achieves this by using local replicas and read/write replicas within regions.
+
+APIs and Data Models:
+
+SQL API: Uses SQL-like queries on JSON documents (default API).
+MongoDB API: Provides support for applications written for MongoDB with wire protocol compatibility.
+Gremlin API: Supports graph-based databases for applications using the Gremlin query language.
+Cassandra API: Offers compatibility with the Cassandra database, allowing you to use existing applications without significant changes.
+Table API: Provides key-value store capabilities similar to Azure Table Storage.
+
+Automatic Indexing:
+
+Cosmos DB automatically indexes all data, providing fast and efficient queries without needing a predefined schema or index creation.
+You can also configure custom indexing policies to control which fields are indexed or excluded.
+
+Security:
+
+Cosmos DB integrates with Azure Active Directory (Azure AD) for authentication.
+It supports role-based access control (RBAC) and provides network isolation via Virtual Networks (VNETs) and firewalls.
+Encryption of data at rest and in transit ensures data security.
+
+High Availability and Durability:
+
+Cosmos DB provides a service level agreement (SLA) that guarantees 99.999% availability for multi-region databases.
+It uses multi-master replication, ensuring that data is highly available and durable, even during region failures.
+
+Common Use Cases:
+Real-time Analytics: Cosmos DB's low latency and global replication are ideal for applications that need real-time analytics across a distributed environment.
+
+IoT Applications: The ability to ingest massive amounts of data from IoT devices and make this data globally accessible in real-time.
+
+Gaming: Gamers worldwide can access game data quickly, thanks to Cosmos DB’s global distribution and low-latency reads/writes.
+
+E-commerce: With its scalability and high availability, Cosmos DB supports e-commerce applications that handle vast amounts of customer and transaction data.
+
+Social Media and Communication Platforms: Cosmos DB supports highly interactive platforms that require low-latency access to user-specific data.
+
+Pricing:
+Cosmos DB is priced based on the provisioned Request Units (RUs) per second, which measure the amount of throughput for operations like reads, writes, and queries. You can also use an autoscale model where the RU/s scales automatically based on workload.
