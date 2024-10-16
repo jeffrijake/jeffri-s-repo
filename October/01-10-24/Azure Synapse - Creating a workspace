@@ -1,0 +1,79 @@
+To create an Azure Synapse Analytics workspace, follow these steps:
+
+Steps to Create an Azure Synapse Workspace:
+
+Prerequisites:
+An active Azure subscription.
+Appropriate permissions (Owner or Contributor role) to create resources in the Azure portal.
+
+Step 1: Sign in to the Azure Portal
+Go to Azure Portal and sign in with your Azure account.
+
+Step 2: Navigate to Azure Synapse Analytics
+In the Azure Portal, search for "Azure Synapse Analytics" in the search bar and select it from the dropdown.
+
+Step 3: Create a Synapse Workspace
+In the Azure Synapse Analytics page, click the "Create" button.
+
+On the Basics tab:
+
+Subscription: Select your Azure subscription.
+
+Resource Group: Select an existing resource group or create a new one.
+
+Workspace Name: Enter a unique name for your Synapse workspace.
+
+Region: Choose the Azure region where you want to deploy the workspace (this is important for performance and compliance).
+Storage Account: Select or create a new Azure Data Lake Storage Gen2 account. This will act as your workspace’s primary data storage.
+File System: Name the file system for your Data Lake (typically synapse or similar).
+
+Click Next: Security.
+
+Step 4: Configure Security Settings
+
+On the Security tab:
+
+Managed Identity: By default, Synapse creates a system-assigned managed identity for the workspace to access other Azure resources securely.
+Data Encryption: Optionally, you can specify customer-managed keys for encryption if required.
+You can also choose to connect the workspace to a Virtual Network (VNet) for additional security.
+
+Click Next: Networking.
+
+Step 5: Configure Networking Settings (Optional)
+If required, configure networking settings like enabling a virtual network (VNet), managed private endpoints, and data exfiltration protection.
+
+Click Next: Tags.
+
+Step 6: Add Tags (Optional)
+
+You can add tags to your workspace (key-value pairs) for better organization and billing tracking.
+
+Click Next: Review + Create.
+
+Step 7: Review and Create the Workspace
+
+Review all your workspace configuration settings.
+
+Once everything looks good, click the "Create" button to deploy the Synapse workspace.
+
+The deployment process will take a few minutes. Once completed, you will receive a notification.
+
+Step 8: Access Your Synapse Workspace
+After the deployment is finished, navigate to the resource group or the Synapse workspace itself.
+
+Click "Go to resource" to access the Synapse workspace.
+
+You will be taken to Azure Synapse Studio, where you can start working with your workspace, create SQL pools, Spark pools, data pipelines, and more.
+
+Summary of Required Inputs:
+
+Subscription: Select your Azure subscription.
+
+Resource Group: Choose or create a resource group.
+
+Workspace Name: A unique name for your workspace.
+
+Region: Choose the region for deployment.
+
+Azure Data Lake Storage Account: Select or create one for storing workspace data.
+
